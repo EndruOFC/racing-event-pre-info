@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" fill="none">
+  <!-- Porsche 911 GT3 RS 992 Seitensilhouette -->
+  <g fill="currentColor" opacity="1">
+    <!-- Hauptkarosserie -->
+    <path d="
+      M 60 230
+      L 60 220
+      Q 62 210 80 205
+      L 120 200
+      L 155 175
+      Q 175 155 210 148
+      L 310 138
+      Q 340 132 370 128
+      L 430 125
+      Q 480 122 520 124
+      L 580 128
+      Q 620 132 650 145
+      L 680 158
+      Q 700 168 710 178
+      L 720 185
+      L 730 195
+      L 730 220
+      L 730 230
+      Z
+    "/>
+    <!-- Dach / Kabinendach -->
+    <path d="
+      M 210 148
+      L 230 130
+      Q 250 118 280 112
+      L 360 106
+      L 450 106
+      Q 500 107 530 113
+      L 570 122
+      Q 600 130 620 143
+      L 650 145
+      Q 620 132 580 128
+      L 520 124
+      Q 480 122 430 125
+      L 370 128
+      Q 340 132 310 138
+      Z
+    "/>
+    <!-- Heckflügel (GT3 RS) -->
+    <path d="M 660 128 L 740 120 L 745 126 L 666 136 Z"/>
+    <rect x="700" y="120" width="8" height="20" rx="2"/>
+    <rect x="718" y="116" width="28" height="5" rx="2"/>
+    <!-- Vordere Radkastenöffnung -->
+    <circle cx="185" cy="232" r="42" fill="var(--schwarz,#0A0A0A)"/>
+    <circle cx="185" cy="232" r="38"/>
+    <!-- Hintere Radkastenöffnung -->
+    <circle cx="590" cy="232" r="46" fill="var(--schwarz,#0A0A0A)"/>
+    <circle cx="590" cy="232" r="42"/>
+    <!-- Räder vorne -->
+    <circle cx="185" cy="232" r="36" fill="none" stroke="currentColor" stroke-width="8"/>
+    <circle cx="185" cy="232" r="18" fill="currentColor"/>
+    <circle cx="185" cy="232" r="10" fill="var(--schwarz,#0A0A0A)"/>
+    <!-- Felgenspeichen vorne -->
+    <line x1="185" y1="196" x2="185" y2="214" stroke="var(--schwarz,#0A0A0A)" stroke-width="4"/>
+    <line x1="185" y1="250" x2="185" y2="268" stroke="var(--schwarz,#0A0A0A)" stroke-width="4"/>
+    <line x1="149" y1="232" x2="167" y2="232" stroke="var(--schwarz,#0A0A0A)" stroke-width="4"/>
+    <line x1="203" y1="232" x2="221" y2="232" stroke="var(--schwarz,#0A0A0A)" stroke-width="4"/>
+    <line x1="159" y1="206" x2="172" y2="219" stroke="var(--schwarz,#0A0A0A)" stroke-width="4"/>
+    <line x1="198" y1="245" x2="211" y2="258" stroke="var(--schwarz,#0A0A0A)" stroke-width="4"/>
+    <line x1="211" y1="206" x2="198" y2="219" stroke="var(--schwarz,#0A0A0A)" stroke-width="4"/>
+    <line x1="172" y1="245" x2="159" y2="258" stroke="var(--schwarz,#0A0A0A)" stroke-width="4"/>
+    <!-- Räder hinten -->
+    <circle cx="590" cy="232" r="40" fill="none" stroke="currentColor" stroke-width="8"/>
+    <circle cx="590" cy="232" r="20" fill="currentColor"/>
+    <circle cx="590" cy="232" r="11" fill="var(--schwarz,#0A0A0A)"/>
+    <!-- Felgenspeichen hinten -->
+    <line x1="590" y1="192" x2="590" y2="212" stroke="var(--schwarz,#0A0A0A)" stroke-width="5"/>
+    <line x1="590" y1="252" x2="590" y2="272" stroke="var(--schwarz,#0A0A0A)" stroke-width="5"/>
+    <line x1="550" y1="232" x2="570" y2="232" stroke="var(--schwarz,#0A0A0A)" stroke-width="5"/>
+    <line x1="610" y1="232" x2="630" y2="232" stroke="var(--schwarz,#0A0A0A)" stroke-width="5"/>
+    <line x1="562" y1="204" x2="577" y2="219" stroke="var(--schwarz,#0A0A0A)" stroke-width="5"/>
+    <line x1="603" y1="245" x2="618" y2="260" stroke="var(--schwarz,#0A0A0A)" stroke-width="5"/>
+    <line x1="618" y1="204" x2="603" y2="219" stroke="var(--schwarz,#0A0A0A)" stroke-width="5"/>
+    <line x1="577" y1="245" x2="562" y2="260" stroke="var(--schwarz,#0A0A0A)" stroke-width="5"/>
+    <!-- Seitenschweller -->
+    <rect x="228" y="220" width="318" height="14" rx="3"/>
+    <!-- Diffusor hinten -->
+    <path d="M 670 218 L 730 210 L 730 230 L 670 230 Z"/>
+    <!-- Frontschürze / Splitter -->
+    <path d="M 60 220 L 80 218 L 85 230 L 60 230 Z"/>
+    <!-- Scheinwerfer vorne -->
+    <path d="M 75 198 Q 85 190 100 190 L 130 192 L 125 200 L 90 198 Z" opacity="0.5"/>
+    <!-- Rücklicht -->
+    <path d="M 718 178 L 730 178 L 730 195 L 718 195 Z" opacity="0.6"/>
+    <!-- Türgriff -->
+    <rect x="360" y="168" width="30" height="6" rx="3" opacity="0.5"/>
+    <!-- Seitenfenster -->
+    <path d="
+      M 235 148 L 255 128 Q 270 118 295 114 L 380 110 L 380 142 L 260 148 Z
+    " opacity="0.3"/>
+    <path d="M 385 110 L 455 110 L 460 142 L 385 142 Z" opacity="0.3"/>
+    <path d="M 465 110 L 540 115 Q 570 120 595 132 L 600 145 L 480 148 L 465 142 Z" opacity="0.3"/>
+  </g>
+</svg>
