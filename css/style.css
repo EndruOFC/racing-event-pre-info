@@ -238,8 +238,9 @@ img { max-width: 100%; height: auto; }
 .hero-logo-wrap:last-child { justify-content: flex-end; }
 
 .hero-logo {
-  height: 72px;
+  height: 100px;
   width: auto;
+  max-width: 220px;
   object-fit: contain;
   transition: transform var(--transition), filter var(--transition);
 }
@@ -1088,7 +1089,7 @@ img[src*="menzimuck.png"] {
     gap: 1.25rem;
   }
   .hero-logo-wrap { justify-content: center !important; }
-  .hero-logo { height: 52px; }
+  .hero-logo { height: 64px; }
 
   .hero-car { display: none; }
 
