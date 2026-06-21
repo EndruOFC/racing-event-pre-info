@@ -249,6 +249,9 @@ img { max-width: 100%; height: auto; }
   filter: drop-shadow(0 0 14px rgba(255,209,0,0.5));
 }
 
+/* Logo-Links eng um das Bild (kein Inline-Descender-Spalt) */
+.hero-logo-wrap a, .footer-logos a, .partner-logos a { display: inline-flex; line-height: 0; }
+
 .hero-center { text-align: center; }
 
 .hero-badge {
