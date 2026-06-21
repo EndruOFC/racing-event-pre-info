@@ -7,10 +7,10 @@
 const CONFIG = {
   // Datum Season Opener – anpassen sobald Termin feststeht
   SEASON_OPENER: '2026-09-01T18:00:00',
-  // Link zum Anmeldeportal – Subdomain eintragen sobald bekannt
-  ANMELDE_URL: 'https://anmeldung.racing-cup-2026.ch',
-  // Link zur Rangliste (Platzhalter)
-  RANGLISTE_URL: '#',
+  // Link zum Anmeldeportal (sign-in Site)
+  ANMELDE_URL: 'https://endruofc.github.io/Racing-Event-Sing-In/',
+  // Link zur Rangliste (cup-2026 Standings)
+  RANGLISTE_URL: 'https://endruofc.github.io/firmen-racing-cup-2026/standings.html',
 };
 
 /* ── Navigation: Hamburger + aktiver Link ──────────────────── */
