@@ -7,10 +7,8 @@
 const CONFIG = {
   // Datum Season Opener – anpassen sobald Termin feststeht
   SEASON_OPENER: '2026-09-01T18:00:00',
-  // Link zum Anmeldeportal (sign-in Site)
-  ANMELDE_URL: 'https://endruofc.github.io/Racing-Event-Sing-In/',
-  // Link zur Rangliste (cup-2026 Standings)
-  RANGLISTE_URL: 'https://endruofc.github.io/firmen-racing-cup-2026/standings.html',
+  // Hinweis: Anmelde-/Rangliste-Links liegen direkt im href der Buttons
+  // (robuster gegen Caching als per JS gesetzte Links).
 };
 
 /* ── Navigation: Hamburger + aktiver Link ──────────────────── */
@@ -54,7 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   initCountdown();
   initAccordion();
-  setExternalLinks();
 });
 
 /* ── Countdown bis Season Opener ───────────────────────────── */
@@ -111,15 +108,5 @@ function initAccordion() {
       // Dieses öffnen, sofern es vorher zu war
       if (!istOffen) item.classList.add('offen');
     });
-  });
-}
-
-/* ── Externe Links setzen ──────────────────────────────────── */
-function setExternalLinks() {
-  document.querySelectorAll('[data-link="anmeldung"]').forEach(el => {
-    el.href = CONFIG.ANMELDE_URL;
-  });
-  document.querySelectorAll('[data-link="rangliste"]').forEach(el => {
-    el.href = CONFIG.RANGLISTE_URL;
   });
 }
