@@ -116,13 +116,6 @@ a:focus-visible            { outline: 2px solid var(--color-primary); outline-of
 ::-webkit-scrollbar-track { background: var(--color-dark); }
 ::-webkit-scrollbar-thumb { background: var(--color-primary); border-radius: 3px; }
 
-/* ── Carbon-Fiber Textur ───────────────────────────────────── */
-.carbon {
-  background-image:
-    repeating-linear-gradient(45deg,  rgba(255,255,255,.018) 0px, rgba(255,255,255,.018) 1px, transparent 1px, transparent 4px),
-    repeating-linear-gradient(-45deg, rgba(255,255,255,.018) 0px, rgba(255,255,255,.018) 1px, transparent 1px, transparent 4px);
-  background-size: 8px 8px;
-}
 
 /* ══════════════════════════════════════════════════════════════
    NAVIGATION — Glassmorphism, sticky
@@ -155,7 +148,6 @@ a:focus-visible            { outline: 2px solid var(--color-primary); outline-of
   flex-shrink: 0;
 }
 
-/* Status-Indikator — subtiler Puls, kein Neon */
 .navbar-brand-dot {
   display: inline-block;
   width: 7px;
@@ -163,12 +155,6 @@ a:focus-visible            { outline: 2px solid var(--color-primary); outline-of
   background: var(--color-primary);
   border-radius: 50%;
   flex-shrink: 0;
-  animation: puls 3s ease-in-out infinite;
-}
-
-@keyframes puls {
-  0%, 100% { opacity: 1;   transform: scale(1); }
-  50%       { opacity: .5; transform: scale(.88); }
 }
 
 .navbar-links {
@@ -383,8 +369,8 @@ a:focus-visible            { outline: 2px solid var(--color-primary); outline-of
 /* Trennlinie: Gelb/Blau Gradient — per Brief */
 .section-divider {
   height: 1px;
-  background: linear-gradient(90deg, var(--color-secondary) 0%, var(--color-primary) 50%, var(--color-secondary) 100%);
-  opacity: .22;
+  background: linear-gradient(90deg, transparent, var(--color-secondary) 30%, var(--color-primary) 50%, var(--color-secondary) 70%, transparent);
+  opacity: .45;
   margin: 0;
 }
 
@@ -840,8 +826,9 @@ a:focus-visible            { outline: 2px solid var(--color-primary); outline-of
   border-bottom: 1px solid rgba(255,209,0,.06);
   transition: background var(--t);
 }
-.points-table tbody tr:nth-child(even) { background: rgba(255,255,255,.02); }
-.points-table tbody tr:hover           { background: rgba(255,209,0,.04) !important; }
+.points-table tbody tr:nth-child(odd)  { background: var(--color-surface); }
+.points-table tbody tr:nth-child(even) { background: var(--color-surface-2); }
+.points-table tbody tr:hover           { background: #242424 !important; }
 .points-table tbody tr:first-child     { background: var(--color-gold-surface); }
 .points-table tbody tr:first-child td:last-child { color: var(--color-gold); font-weight: 700; }
 
