@@ -25,14 +25,17 @@ die ein Team anmelden oder sich über die Meisterschaft informieren wollen.
 
 | Token | Hex | Verwendung |
 |-------|-----|-----------|
-| `--gelb` | `#FFD100` | Primär-Akzent: Buttons, Headlines, Borders |
-| `--blau` | `#003087` | Sekundär: Partner-Farbton, Hinweisboxen |
-| `--schwarz` | `#0A0A0A` | Seitenhintergrund |
-| `--anthrazit` | `#1A1A1A` | CTA-Blöcke |
-| `--karte` | `#141414` | Karten/Cards |
-| `--gold` | `#C9A84C` | Grand-Finale-Akzent, P1-Podium |
-| `--silber` | `#A8A9AD` | P2-Podium |
-| `--bronze` | `#CD7F32` | P3-Podium |
+| `--gelb` / `--color-primary` | `#FFD100` | Primär-Akzent: Buttons, Headlines, Borders |
+| `--blau` / `--color-secondary` | `#003087` | Sekundär: Partner-Farbton, Hinweisboxen |
+| `--schwarz` / `--color-dark` | `#0A0A0A` | Seitenhintergrund |
+| `--anthrazit` / `--color-surface-2` | `#1E1E1E` | CTA-Blöcke |
+| `--karte` / `--color-surface` | `#141414` | Karten/Cards |
+| `--gold` / `--color-gold` | `#C9A84C` | Grand-Finale-Akzent, P1-Podium |
+| `--silber` / `--color-silver` | `#A8A9AD` | P2-Podium |
+| `--bronze` / `--color-bronze` | `#CD7F32` | P3-Podium |
+
+CSS hat **primäre Tokens** (`--color-*`) plus **deutsche Aliasse** (`--gelb`, `--blau` etc.)
+für Inline-Styles in HTML. Beide Formen sind verwendbar.
 
 Fonts: **Orbitron** (Headlines, monospace Motorsport-Font) · **Rajdhani** (Body, 300–700)
 Beide via Google Fonts CDN geladen.
@@ -45,10 +48,12 @@ CSS-Filter `invert(1) hue-rotate(180deg)` macht es für Dark-Theme nutzbar.
 ## Tech-Stack
 
 - **Statische Website** – reines HTML/CSS/JavaScript, kein Build-Tool, kein Framework
-- **Styling** – CSS Custom Properties Design-System (~1100 Zeilen in `css/style.css`)
-- **JS** – Vanilla JS (~113 Zeilen in `js/main.js`): Countdown, FAQ-Accordion, Hamburger-Nav
+- **Styling** – CSS Custom Properties Design-System (~1450 Zeilen in `css/style.css`)
+- **JS** – Vanilla JS (~113 Zeilen in `js/main.js`): Countdown, FAQ-Accordion, Hamburger-Nav, Navbar-Scroll-Darkening
+- **Parallax** – Inline `<script>` am Ende von `index.html` (außerhalb von `main.js`) via `translateY` auf `.hero-bg`
 - **Fonts** – Google Fonts CDN (Orbitron + Rajdhani)
 - **Assets** – SVG-Silhouette in `assets/`, Logos (PNG) in `logos/`
+- **Hero-Bild** – Unsplash-URL direkt im `style`-Attribut von `#heroBg` (kein lokales Asset)
 - **Deployment** – GitHub Pages, Branch `main`, Root `/`
 - **Favicon** – Inline `data:URI` SVG (kein eigenes Favicon-File)
 
@@ -58,13 +63,38 @@ CSS-Filter `invert(1) hue-rotate(180deg)` macht es für Dark-Theme nutzbar.
 
 | Datei | Inhalt | Besonderheiten |
 |-------|--------|---------------|
-| `index.html` | Hero, Countdown, Highlight-Kacheln, Saison-Überblick, Partner-Logos, CTA | Porsche-Silhouette als Hintergrund-Deko |
-| `format.html` | Saisonkalender (Timeline), Regelwerk (6 Cards), Punktesystem (Podium + Tabelle + Bonus) | Podium mit Shimmer-Animation |
+| `index.html` | Vollbild-Hero mit Foto + Parallax, Narrativ-Quote, Company-Grid (3 Karten), Saison-Grid (4 Karten), CTA-Block | Unsplash-Hintergrundbild; Porsche-Silhouette als `.hero-car`-Overlay; Parallax per Inline-Script |
+| `format.html` | Saisonkalender (Timeline), Regelwerk (6 Cards), Punktesystem (Podium + Tabelle + Bonus) | Standard-Hero (CSS only, kein Foto); Podium mit Shimmer-Animation |
 | `kosten.html` | Teilnahmegebühr, Pro Rennabend, Grand Finale, Gruppenrabatt, Gesamttabelle, Inbegriffen-Liste | Alle Preise Platzhalter "???" |
 | `faq.html` | 9 FAQ-Accordion-Items (8 inhaltlich + 1 Platzhalter) | Accordion per CSS max-height |
 
-Alle 4 Seiten teilen: identische Navigation, identischen Footer, gleiche Logos.
+Alle 4 Seiten teilen: identische Navigation (mit Hamburger-Toggle), identischen Footer, gleiche Logos.
 Navigation und Footer sind **4× kopiert** (kein Include-Mechanismus).
+
+### index.html Sektionsstruktur (Stand nach Landing-Umbau, Commit 27282d9)
+
+```
+<header class="hero hero-main">
+  .hero-img-wrap                 ← Unsplash-Foto + Overlay
+    #heroBg                      ← Parallax-Target (JS translateY)
+    .hero-overlay
+  .hero-logos                    ← Dual-Logo-Reihe (Lässer / Menzi Muck)
+  .hero-content-main             ← "Road to the Nordschleife" + CTA-Buttons
+  <img class="hero-car">         ← Porsche-Silhouette als Overlay (assets/porsche-silhouette.svg)
+  .hero-stripe
+
+.countdown-strip #countdown-wrapper
+.section-divider
+.narrative-section               ← Blockquote / Claim
+.section-divider
+.section → .company-grid         ← 3 Company-Cards (Lässer, Menzi Muck, Hybrid Racing)
+.section-divider
+.section → .season-grid          ← 4 Season-Cards (Event 01-03 + Grand Finale)
+.section-sm → .cta-block
+<footer>
+<script src="js/main.js">
+<script> ... Parallax-IIFE ... </script>
+```
 
 ---
 
@@ -106,9 +136,15 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 
 - **Dark-Theme only** – kein Light-Mode-Toggle; bewusste Motorsport-Ästhetik-Entscheidung
 - **Cross-Site-Links direkt im href** (nicht via JS-Variable) – robuster gegen Browser-Caching
-  (Branch `fix/hardcode-cross-links` / Commit `aefdb2b`)
-- **Carbon-Fiber-Textur** via CSS `repeating-linear-gradient` (kein Bild-Asset)
-- **Porsche-Silhouette** als handcodiertes SVG (800×320 px, `currentColor`)
+  (Commit `aefdb2b`, PR #10 gemergt)
+- **Hero `index.html` nutzt Unsplash-Foto** – URL direkt im `style`-Attribut von `#heroBg`;
+  kein lokales Asset. Bei Bedarf mit eigenem Bild ersetzen.
+- **Parallax auf index.html**: Inline-IIFE am Seitenende manipuliert `#heroBg.style.transform`
+  (nur Desktop ≥ 768 px). Nicht in `main.js` ausgelagert – bewusste Entscheidung für Inline-Scope.
+- **Carbon-Fiber-Textur** via CSS `repeating-linear-gradient` (kein Bild-Asset) –
+  nur auf Sub-Pages (`format.html`, `kosten.html`, `faq.html`) aktiv; `index.html` Hero hat Foto-Background
+- **Porsche-Silhouette** als `.hero-car` `<img>`-Tag (`assets/porsche-silhouette.svg`), positioniert
+  als Overlay über dem Foto-Hero. SVG verwendet `currentColor` für Farbkontrolle.
 - **Menzi-Muck-Logo** via CSS `invert(1) hue-rotate(180deg)` für Dark-Theme adaptiert
 - **Lässer-Logo** in CMYK-Variante für Hero/Footer, RGB-Variante vorhanden aber ungenutzt
 - **Responsive Breakpoints**: 768px (Hamburger-Nav, einspaltiges Hero-Logo) + 500px (Einspalt-Grids)
@@ -116,6 +152,8 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 - **Countdown** via rekursiver `setTimeout`-Kette (nicht `setInterval`)
 - **Aktiver Nav-Link** wird per JS via `window.location.pathname` erkannt und mit `.aktiv` markiert;
   HTML enthält zusätzlich statisches `.aktiv` als Fallback
+- **Navbar-Hintergrund** verdunkelt sich via JS-scroll-Listener (`rgba(10,10,10,.85)` → `.97`);
+  kein CSS-only Shrink (Unterschied zu Racing-Event-Sing-In, das `.navbar--shrunk` nutzt)
 
 ---
 
@@ -126,7 +164,7 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 | `logos/LAESSER-Logo_CMYK.png` | PNG (weiß auf transparent) | Hero, Partner-Bereich, Footer – kein Filter nötig |
 | `logos/LAESSER-Logo_RGB.png` | PNG (weiß auf transparent) | Derzeit ungenutzt (Reserve) |
 | `logos/menzimuck.png` | PNG (schwarz/rot auf transparent) | Überall – mit CSS-Filter invertiert |
-| `assets/porsche-silhouette.svg` | SVG (`currentColor`) | Hero-Hintergrund (opacity 0.13) |
+| `assets/porsche-silhouette.svg` | SVG (`currentColor`) | Hero-Overlay als `.hero-car` (opacity via CSS) |
 
 ---
 
@@ -152,7 +190,7 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 
 ---
 
-## Offene Punkte (Stand 2026-06-24)
+## Offene Punkte (Stand 2026-06-25)
 
 ### Kritisch (blockiert finalen Launch)
 - [ ] Preise eintragen: alle `CHF ???` in `kosten.html` → definitive Beträge nach Abklärung mit Hybrid Racing
@@ -165,6 +203,7 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 - [ ] CNAME-Datei committen (Custom Domain `info.racing-cup-2026.ch`)
 
 ### Mittel
+- [ ] Unsplash-Hero-Bild durch eigenes Foto ersetzen (aktuell externe URL, DSGVO-relevant)
 - [ ] Menzi-Muck-Logo: weisses PNG direkt bei Menzi Muck besorgen (CSS-Filter-Hack vermeiden)
 - [ ] Partner-Logo-Slots befüllen oder Platzhalter entfernen (2× `+ Partner` in `index.html`)
 - [ ] FAQ-Platzhalter F9 ("Weitere Fragen? [Platzhalter]") mit echtem Inhalt ersetzen
@@ -176,3 +215,16 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 - [ ] 404-Seite für GitHub Pages (`404.html`)
 - [ ] Countdown auf `setInterval` umstellen (robuster als rekursiver `setTimeout`)
 - [ ] Inline-Styles der Event-Grid-Kacheln in `index.html` → CSS-Klassen extrahieren
+- [ ] Parallax-Script aus `index.html` in `js/main.js` auslagern (technische Schuld)
+
+---
+
+## Aktueller Branch-Status (Stand 2026-06-25)
+
+- `main`: Stabil und aktuell. Alle bisherigen PRs gemergt. Keine offenen Feature-Branches.
+  - PR #10 (`fix/hardcode-cross-links`): Cross-Site-Links direkt im href hardgecodet (Commit `aefdb2b`)
+  - PR #9 (`feat/cross-site-links`): Anmeldung & Rangliste verdrahtet
+  - PR #8 (`fix/logo-links`): Logo-Links klickbar gemacht
+  - Commit `27282d9`: Landing-Seite komplett umgebaut (Unsplash-Hero + Narrativ-Sektionen)
+  - Commit `72dda8d`: Corporate Design-System verfeinert (Gaming-Elemente entfernt)
+  - Commit `4a74f01`: Corporate Motorsport Design-System implementiert
