@@ -1096,13 +1096,14 @@ footer::before {
 }
 .footer-powered strong { color: var(--color-text); font-weight: 600; }
 
-.footer-tagline {
-  color: var(--color-text-muted);
-  font-size: .82rem;
-  font-style: italic;
+.footer-credits {
+  font-size: .7rem;
+  color: #888888;
+  letter-spacing: .04em;
   margin-bottom: 1.75rem;
-  opacity: .7;
 }
+.footer-credits a       { color: #888888; text-decoration: none; }
+.footer-credits a:hover { color: var(--color-primary); }
 
 .footer-links {
   display: flex;
