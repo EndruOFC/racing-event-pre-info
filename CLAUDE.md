@@ -1,8 +1,8 @@
-# Firmen Racing Cup 2026 — Projektüberblick (CLAUDE.md)
+# Firmen Racing Cup 2026/2027 — Projektüberblick (CLAUDE.md)
 
 ## Projektziel
 
-Öffentliche Info-Website für den **Firmen Racing Cup 2026** – ein Sim-Racing-Event bei
+Öffentliche Info-Website für den **Firmen Racing Cup 2026/2027** – ein Sim-Racing-Event bei
 Hybrid Racing in Au SG. Die Website präsentiert Event-Details, Rennformat, Kosten, FAQ
 sowie Cross-Links zum Anmeldeportal und zur Rangliste (externe Repos).
 
@@ -18,6 +18,22 @@ die ein Team anmelden oder sich über die Meisterschaft informieren wollen.
 | Lässer Stickmaschinen AG (Widnau) | Co-Veranstalter / Presented by | laesser.ch |
 | Menzi Muck AG | Co-Veranstalter / Presented by | menzimuck.com |
 | Hybrid Racing (Au SG) | Austragungsort, Simulator-Provider | – |
+
+---
+
+## Eventkalender Saison 2026/2027
+
+| Event | Datum | Strecke | Kosten/Person |
+|-------|-------|---------|--------------|
+| Event 01 — Season Opener | Di. 13. Oktober 2026 | Spielberg South Course | CHF 90.— |
+| Event 02 — Round 2 | Mi. 18. Februar 2027 | Hockenheim / Brands Hatch | CHF 90.— |
+| Event 03 — Weather Challenge | Di. 04. Mai 2027 | Nürburgring Sprint GT | CHF 90.— |
+| Grand Finale | Di. 06. Juli 2027 | Nürburgring Nordschleife | CHF 180.— |
+
+- Alle Events bei **Hybrid Racing Au SG**, Start jeweils ab **19:00 Uhr**
+- Format normal: 20' Training + 10' Qualifying + 60' Rennen
+- Format E03: 20' Training + 10' Qualifying + 90' Rennen (Weather Challenge)
+- Format Finale: 30' Training + 30' Qualifying + 3h Rennen · Pflicht-Fahrerwechsel · ×2 Punkte
 
 ---
 
@@ -48,8 +64,8 @@ CSS-Filter `invert(1) hue-rotate(180deg)` macht es für Dark-Theme nutzbar.
 ## Tech-Stack
 
 - **Statische Website** – reines HTML/CSS/JavaScript, kein Build-Tool, kein Framework
-- **Styling** – CSS Custom Properties Design-System (~1450 Zeilen in `css/style.css`)
-- **JS** – Vanilla JS (~113 Zeilen in `js/main.js`): Countdown, FAQ-Accordion, Hamburger-Nav, Navbar-Scroll-Darkening
+- **Styling** – CSS Custom Properties Design-System (~1650 Zeilen in `css/style.css`)
+- **JS** – Vanilla JS (~115 Zeilen in `js/main.js`): Countdown, FAQ-Accordion, Hamburger-Nav, Navbar-Scroll-Darkening
 - **Parallax** – Inline `<script>` am Ende von `index.html` (außerhalb von `main.js`) via `translateY` auf `.hero-bg`
 - **Fonts** – Google Fonts CDN (Orbitron + Rajdhani)
 - **Assets** – SVG-Silhouette in `assets/`, Logos (PNG) in `logos/`
@@ -65,13 +81,13 @@ CSS-Filter `invert(1) hue-rotate(180deg)` macht es für Dark-Theme nutzbar.
 |-------|--------|---------------|
 | `index.html` | Vollbild-Hero mit Foto + Parallax, Narrativ-Quote, Company-Grid (3 Karten), Saison-Grid (4 Karten), CTA-Block | Unsplash-Hintergrundbild; Porsche-Silhouette als `.hero-car`-Overlay; Parallax per Inline-Script |
 | `format.html` | Saisonkalender (Timeline), Regelwerk (6 Cards), Punktesystem (Podium + Tabelle + Bonus) | Standard-Hero (CSS only, kein Foto); Podium mit Shimmer-Animation |
-| `kosten.html` | Teilnahmegebühr, Pro Rennabend, Grand Finale, Gruppenrabatt, Gesamttabelle, Inbegriffen-Liste | Alle Preise Platzhalter "???" |
-| `faq.html` | 9 FAQ-Accordion-Items (8 inhaltlich + 1 Platzhalter) | Accordion per CSS max-height |
+| `kosten.html` | 4 Event-Karten mit definitiven Preisen, Gesamttabelle (CHF 450.—/Person), Inbegriffen-Liste | Preise definitiv: CHF 90.— / CHF 180.—; Hinweis-Box über Verpflegung |
+| `faq.html` | 9 FAQ-Accordion-Items | Accordion per CSS max-height; `aria-expanded` wird per JS korrekt gesetzt |
 
 Alle 4 Seiten teilen: identische Navigation (mit Hamburger-Toggle), identischen Footer, gleiche Logos.
 Navigation und Footer sind **4× kopiert** (kein Include-Mechanismus).
 
-### index.html Sektionsstruktur (Stand nach Landing-Umbau, Commit 27282d9)
+### index.html Sektionsstruktur
 
 ```
 <header class="hero hero-main">
@@ -89,7 +105,7 @@ Navigation und Footer sind **4× kopiert** (kein Include-Mechanismus).
 .section-divider
 .section → .company-grid         ← 3 Company-Cards (Lässer, Menzi Muck, Hybrid Racing)
 .section-divider
-.section → .season-grid          ← 4 Season-Cards (Event 01-03 + Grand Finale)
+.section → .season-grid          ← 4 Season-Cards mit definitiven Daten + Saison 2026/2027
 .section-sm → .cta-block
 <footer>
 <script src="js/main.js">
@@ -104,11 +120,19 @@ Kein serverseitiges Datenmodell – alles ist statischer HTML-Content.
 
 ### Saison-Struktur (hardcoded in format.html + index.html)
 ```
-4 Events:
-├── Event 01 – Season Opener    | Spielberg South Course | 20' Q + 10' WU + 60' R
-├── Event 02 – Normales Rennen  | Hockenheim / Brands Hatch | 20' Q + 10' WU + 60' R
-├── Event 03 – Weather Challenge| Nürburgring Sprint GT | 20' Q + 10' WU + 90' R
-└── Grand Finale                | Nürburgring Nordschleife | 30' Q + 30' WU + 3h R · ×2 Punkte
+4 Events — alle bei Hybrid Racing Au SG, ab 19:00 Uhr:
+├── Event 01 – Season Opener    | Di. 13. Okt. 2026 | Spielberg South Course      | 20' T + 10' Q + 60' R
+├── Event 02 – Round 2          | Mi. 18. Feb. 2027 | Hockenheim / Brands Hatch   | 20' T + 10' Q + 60' R
+├── Event 03 – Weather Challenge| Di. 04. Mai 2027  | Nürburgring Sprint GT       | 20' T + 10' Q + 90' R
+└── Grand Finale                | Di. 06. Jul. 2027 | Nürburgring Nordschleife    | 30' T + 30' Q + 3h R · ×2 Punkte
+```
+
+### Preise (definitiv, pro Person)
+```
+Event 01 / 02 / 03:  CHF 90.—
+Grand Finale:        CHF 180.—
+Total alle 4 Events: CHF 450.—
+Nicht inbegriffen:   Apéro, Nachtessen, Getränke
 ```
 
 ### Punktesystem (hardcoded in format.html)
@@ -121,7 +145,7 @@ Wertung: Teamwertung (2 Fahrer/Team), 8 Teams total
 
 ### Konfiguration (js/main.js)
 ```js
-CONFIG.SEASON_OPENER = '2026-09-01T18:00:00'  // Platzhalter – anpassen!
+CONFIG.SEASON_OPENER = '2026-10-13T19:00:00'  // Di. 13. Oktober 2026
 ```
 
 ### Cross-Site-Links (hardcoded im HTML, nicht per JS)
@@ -148,12 +172,31 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 - **Menzi-Muck-Logo** via CSS `invert(1) hue-rotate(180deg)` für Dark-Theme adaptiert
 - **Lässer-Logo** in CMYK-Variante für Hero/Footer, RGB-Variante vorhanden aber ungenutzt
 - **Responsive Breakpoints**: 768px (Hamburger-Nav, einspaltiges Hero-Logo) + 500px (Einspalt-Grids)
-- **FAQ-Accordion** via CSS `max-height` (kein JS für Höhe nötig)
+- **FAQ-Accordion** via CSS `max-height` (kein JS für Höhe nötig); `aria-expanded` wird per JS korrekt gesetzt
 - **Countdown** via rekursiver `setTimeout`-Kette (nicht `setInterval`)
 - **Aktiver Nav-Link** wird per JS via `window.location.pathname` erkannt und mit `.aktiv` markiert;
   HTML enthält zusätzlich statisches `.aktiv` als Fallback
 - **Navbar-Hintergrund** verdunkelt sich via JS-scroll-Listener (`rgba(10,10,10,.85)` → `.97`);
   kein CSS-only Shrink (Unterschied zu Racing-Event-Sing-In, das `.navbar--shrunk` nutzt)
+- **CEO Quality Pass** (Commit `6692d03`): Neue Utility-Klassen in `css/style.css` —
+  `.cta-row`, `.hero-page`, `.total-card`, `.total-table`, `.includes-card`, `.includes-grid`,
+  `.kosten-card--gold`, `.kosten-card--blau`, `.bonus-card--finale`, `.countdown-strip-note`, `.timeline-desc`
+
+---
+
+## CSS-Komponenten (Auswahl, `css/style.css`)
+
+| Komponente | Klassen | Verwendet in |
+|---|---|---|
+| Sub-page Hero | `.hero-page` | format, kosten, faq |
+| Button-Reihe | `.cta-row` | alle Seiten |
+| Countdown-Note | `.countdown-strip-note` | index.html |
+| Timeline-Beschreibung | `.timeline-desc` | format.html |
+| Kosten-Card Modifier | `.kosten-card--gold`, `.kosten-card--blau` | kosten.html |
+| Gesamttabelle | `.total-card`, `.total-table`, `.row-finale`, `.row-total` | kosten.html |
+| Inbegriffen-Box | `.includes-card`, `.includes-grid`, `.includes-col-label--yes/no`, `.includes-list` | kosten.html |
+| Bonus-Card Modifier | `.bonus-card--finale` | format.html |
+| Season-Status Dot | `.season-status.upcoming::before` | index.html |
 
 ---
 
@@ -190,15 +233,9 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 
 ---
 
-## Offene Punkte (Stand 2026-06-25)
-
-### Kritisch (blockiert finalen Launch)
-- [ ] Preise eintragen: alle `CHF ???` in `kosten.html` → definitive Beträge nach Abklärung mit Hybrid Racing
-- [ ] Season-Opener-Datum fixieren: `CONFIG.SEASON_OPENER` in `js/main.js` (aktuell: `2026-09-01T18:00:00`)
-- [ ] Event-Termine in `format.html` Timeline-Tags (`tag-datum`) befüllen
+## Offene Punkte (Stand 2026-06-29)
 
 ### Hoch
-- [ ] `aria-expanded` in FAQ-Buttons dynamisch toggeln (Accessibility-Bug: bleibt immer `"false"`)
 - [ ] Open-Graph-Meta-Tags auf allen Seiten (`og:title`, `og:description`, `og:image`)
 - [ ] CNAME-Datei committen (Custom Domain `info.racing-cup-2026.ch`)
 
@@ -206,25 +243,31 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 - [ ] Unsplash-Hero-Bild durch eigenes Foto ersetzen (aktuell externe URL, DSGVO-relevant)
 - [ ] Menzi-Muck-Logo: weisses PNG direkt bei Menzi Muck besorgen (CSS-Filter-Hack vermeiden)
 - [ ] Partner-Logo-Slots befüllen oder Platzhalter entfernen (2× `+ Partner` in `index.html`)
-- [ ] FAQ-Platzhalter F9 ("Weitere Fragen? [Platzhalter]") mit echtem Inhalt ersetzen
-- [ ] README.md aktualisieren (referenziert noch `.svg`-Logos statt `.png`)
 
 ### Niedrig
 - [ ] Impressum / Datenschutzerklärung (Schweizer DSG / nDSG)
 - [ ] Favicon als echte `.ico`/`.png`-Datei (aktuell nur `data:URI` inline SVG)
 - [ ] 404-Seite für GitHub Pages (`404.html`)
 - [ ] Countdown auf `setInterval` umstellen (robuster als rekursiver `setTimeout`)
-- [ ] Inline-Styles der Event-Grid-Kacheln in `index.html` → CSS-Klassen extrahieren
 - [ ] Parallax-Script aus `index.html` in `js/main.js` auslagern (technische Schuld)
+
+### Erledigt
+- [x] Preise eingetragen: CHF 90.— (normale Events) / CHF 180.— (Grand Finale)
+- [x] Season-Opener-Datum gesetzt: `2026-10-13T19:00:00`
+- [x] Alle Event-Termine in Timeline und Season-Grid befüllt
+- [x] `aria-expanded` in FAQ-Buttons dynamisch korrekt gesetzt
+- [x] README.md auf aktuellen Stand gebracht
+- [x] CEO Quality Pass: Utility-Klassen in `css/style.css` (Inline-Styles abgebaut)
 
 ---
 
-## Aktueller Branch-Status (Stand 2026-06-25)
+## Aktueller Branch-Status (Stand 2026-06-29)
 
-- `main`: Stabil und aktuell. Alle bisherigen PRs gemergt. Keine offenen Feature-Branches.
-  - PR #10 (`fix/hardcode-cross-links`): Cross-Site-Links direkt im href hardgecodet (Commit `aefdb2b`)
-  - PR #9 (`feat/cross-site-links`): Anmeldung & Rangliste verdrahtet
-  - PR #8 (`fix/logo-links`): Logo-Links klickbar gemacht
-  - Commit `27282d9`: Landing-Seite komplett umgebaut (Unsplash-Hero + Narrativ-Sektionen)
-  - Commit `72dda8d`: Corporate Design-System verfeinert (Gaming-Elemente entfernt)
-  - Commit `4a74f01`: Corporate Motorsport Design-System implementiert
+- `main`: Stabil und aktuell. Alle Termine und Preise definitiv eingetragen. Keine offenen Feature-Branches.
+  - `7d9908c`: Termine korrigiert (E02: 18. Feb. 2027, E03: 04. Mai 2027, Finale: 06. Jul. 2027)
+  - `6692d03`: Eventdaten, Termine und Preise Saison 2026/2027 initial eingetragen
+  - `365656f`: CEO Quality Check — Footer, Typografie, Platzhalter-Qualität
+  - `ba084ea`: CLAUDE.md auf Stand gebracht
+  - `27282d9`: Landing-Seite komplett umgebaut (Unsplash-Hero + Narrativ-Sektionen)
+  - `72dda8d`: Corporate Design-System verfeinert (Gaming-Elemente entfernt)
+  - `4a74f01`: Corporate Motorsport Design-System implementiert
