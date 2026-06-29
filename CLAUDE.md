@@ -169,7 +169,7 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
   nur auf Sub-Pages (`format.html`, `kosten.html`, `faq.html`) aktiv; `index.html` Hero hat Foto-Background
 - **Porsche-Silhouette** als `.hero-car` `<img>`-Tag (`assets/porsche-silhouette.svg`), positioniert
   als Overlay über dem Foto-Hero. SVG verwendet `currentColor` für Farbkontrolle.
-- **Menzi-Muck-Logo** via CSS `invert(1) hue-rotate(180deg)` für Dark-Theme adaptiert
+- **Menzi-Muck-Logo** neues PNG (weiss/rot auf transparent) — CSS-Filter `invert()` entfernt (war Workaround für altes schwarz/rotes Logo)
 - **Lässer-Logo** in CMYK-Variante für Hero/Footer, RGB-Variante vorhanden aber ungenutzt
 - **Responsive Breakpoints**: 768px (Hamburger-Nav, einspaltiges Hero-Logo) + 500px (Einspalt-Grids)
 - **FAQ-Accordion** via CSS `max-height` (kein JS für Höhe nötig); `aria-expanded` wird per JS korrekt gesetzt
@@ -267,8 +267,8 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 ## Aktueller Branch-Status (Stand 2026-06-29)
 
 - `main`: Stabil und aktuell. Keine offenen Feature-Branches.
+  - `2e100e1`: Fix: Menzi-Muck CSS-Filter entfernt (neues Logo weiss/rot)
   - `6755517`: Assets: Menzi-Muck-Logo aktualisiert (11 KB → 104 KB)
   - `05549f3`: Docs: CLAUDE.md Footer-Stand aktualisiert
-  - `139f1b9`: Docs: CLAUDE.md Branch-Status aktualisiert
   - `d8936f2`: Footer Credits korrigiert — Endrulabs.ch, Copyright 2026/2027
   - `3d0ab28`: Eventkalender Saison 2026/2027 — 4 Events Aug/Sep/Okt 2026 + Finale Jan 2027
