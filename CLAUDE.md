@@ -69,7 +69,7 @@ CSS-Filter `invert(1) hue-rotate(180deg)` macht es für Dark-Theme nutzbar.
 - **Parallax** – Inline `<script>` am Ende von `index.html` (außerhalb von `main.js`) via `translateY` auf `.hero-bg`
 - **Fonts** – Google Fonts CDN (Orbitron + Rajdhani)
 - **Assets** – SVG-Silhouette in `assets/`, Logos (PNG) in `logos/`
-- **Hero-Bild** – Unsplash-URL direkt im `style`-Attribut von `#heroBg` (kein lokales Asset)
+- **Hero-Bild** – lokales Asset `assets/header-pre-event.png` im `style`-Attribut von `#heroBg`
 - **Deployment** – GitHub Pages, Branch `main`, Root `/`
 - **Favicon** – Inline `data:URI` SVG (kein eigenes Favicon-File)
 
@@ -79,7 +79,7 @@ CSS-Filter `invert(1) hue-rotate(180deg)` macht es für Dark-Theme nutzbar.
 
 | Datei | Inhalt | Besonderheiten |
 |-------|--------|---------------|
-| `index.html` | Vollbild-Hero mit Foto + Parallax, Narrativ-Quote, Company-Grid (3 Karten), Saison-Grid (4 Karten), CTA-Block | Unsplash-Hintergrundbild; Porsche-Silhouette als `.hero-car`-Overlay; Parallax per Inline-Script |
+| `index.html` | Vollbild-Hero mit Foto + Parallax, Narrativ-Quote, Company-Grid (3 Karten), Saison-Grid (4 Karten), CTA-Block | Lokales Hero-Bild `assets/header-pre-event.png`; Porsche-Silhouette als `.hero-car`-Overlay; Parallax per Inline-Script |
 | `format.html` | Saisonkalender (Timeline), Regelwerk (6 Cards), Punktesystem (Podium + Tabelle + Bonus) | Standard-Hero (CSS only, kein Foto); Podium mit Shimmer-Animation |
 | `kosten.html` | 4 Event-Karten mit definitiven Preisen, Gesamttabelle (CHF 450.—/Person), Inbegriffen-Liste | Preise definitiv: CHF 90.— / CHF 180.—; Hinweis-Box über Verpflegung |
 | `faq.html` | 9 FAQ-Accordion-Items | Accordion per CSS max-height; `aria-expanded` wird per JS korrekt gesetzt |
@@ -91,7 +91,7 @@ Navigation und Footer sind **4× kopiert** (kein Include-Mechanismus).
 
 ```
 <header class="hero hero-main">
-  .hero-img-wrap                 ← Unsplash-Foto + Overlay
+  .hero-img-wrap                 ← Lokales Foto (header-pre-event.png) + Overlay
     #heroBg                      ← Parallax-Target (JS translateY)
     .hero-overlay
   .hero-logos                    ← Dual-Logo-Reihe (Lässer / Menzi Muck)
@@ -161,8 +161,8 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 - **Dark-Theme only** – kein Light-Mode-Toggle; bewusste Motorsport-Ästhetik-Entscheidung
 - **Cross-Site-Links direkt im href** (nicht via JS-Variable) – robuster gegen Browser-Caching
   (Commit `aefdb2b`, PR #10 gemergt)
-- **Hero `index.html` nutzt Unsplash-Foto** – URL direkt im `style`-Attribut von `#heroBg`;
-  kein lokales Asset. Bei Bedarf mit eigenem Bild ersetzen.
+- **Hero `index.html` nutzt lokales Foto** – `assets/header-pre-event.png` direkt im `style`-Attribut
+  von `#heroBg`. Ersetzt vorherige Unsplash-URL (Commit `19d50af`).
 - **Parallax auf index.html**: Inline-IIFE am Seitenende manipuliert `#heroBg.style.transform`
   (nur Desktop ≥ 768 px). Nicht in `main.js` ausgelagert – bewusste Entscheidung für Inline-Scope.
 - **Carbon-Fiber-Textur** via CSS `repeating-linear-gradient` (kein Bild-Asset) –
@@ -209,6 +209,7 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 | `logos/LAESSER-Logo_CMYK.png` | PNG (weiß auf transparent) | Hero, Partner-Bereich, Footer – kein Filter nötig |
 | `logos/LAESSER-Logo_RGB.png` | PNG (weiß auf transparent) | Derzeit ungenutzt (Reserve) |
 | `logos/menzimuck.png` | PNG (schwarz/rot auf transparent) | Überall – mit CSS-Filter invertiert |
+| `assets/header-pre-event.png` | PNG | Hero-Hintergrundbild auf `index.html` |
 | `assets/porsche-silhouette.svg` | SVG (`currentColor`) | Hero-Overlay als `.hero-car` (opacity via CSS) |
 
 ---
@@ -242,7 +243,6 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 - [ ] CNAME-Datei committen (Custom Domain `info.racing-cup-2026.ch`)
 
 ### Mittel
-- [ ] Unsplash-Hero-Bild durch eigenes Foto ersetzen (aktuell externe URL, DSGVO-relevant)
 - [ ] Menzi-Muck-Logo: weisses PNG direkt bei Menzi Muck besorgen (CSS-Filter-Hack vermeiden)
 - [ ] Partner-Logo-Slots befüllen oder Platzhalter entfernen (2× `+ Partner` in `index.html`)
 
@@ -259,6 +259,7 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 - [x] Alle Event-Termine in Timeline und Season-Grid befüllt
 - [x] `aria-expanded` in FAQ-Buttons dynamisch korrekt gesetzt
 - [x] README.md auf aktuellen Stand gebracht
+- [x] Hero-Bild: Unsplash-URL durch lokales `assets/header-pre-event.png` ersetzt (Commit `19d50af`)
 - [x] CEO Quality Pass: Utility-Klassen in `css/style.css` (Inline-Styles abgebaut)
 - [x] Footer vereinheitlicht: Endrulabs.ch-Credits, Copyright, Gradient — identisch zu allen 3 Repos
 
@@ -267,8 +268,8 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 ## Aktueller Branch-Status (Stand 2026-06-29)
 
 - `main`: Stabil und aktuell. Keine offenen Feature-Branches.
+  - `19d50af`: Assets: Hero-Hintergrundbild durch lokales header-pre-event.png ersetzt
+  - `7e30ba2`: Docs: CLAUDE.md Menzi-Muck-Filter + Branch-Status aktualisiert
   - `2e100e1`: Fix: Menzi-Muck CSS-Filter entfernt (neues Logo weiss/rot)
   - `6755517`: Assets: Menzi-Muck-Logo aktualisiert (11 KB → 104 KB)
   - `05549f3`: Docs: CLAUDE.md Footer-Stand aktualisiert
-  - `d8936f2`: Footer Credits korrigiert — Endrulabs.ch, Copyright 2026/2027
-  - `3d0ab28`: Eventkalender Saison 2026/2027 — 4 Events Aug/Sep/Okt 2026 + Finale Jan 2027
