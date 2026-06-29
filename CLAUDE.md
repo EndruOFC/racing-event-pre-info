@@ -181,6 +181,9 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 - **CEO Quality Pass** (Commit `6692d03`): Neue Utility-Klassen in `css/style.css` —
   `.cta-row`, `.hero-page`, `.total-card`, `.total-table`, `.includes-card`, `.includes-grid`,
   `.kosten-card--gold`, `.kosten-card--blau`, `.bonus-card--finale`, `.countdown-strip-note`, `.timeline-desc`
+- **Footer-Credits** (Commit `d8936f2`): `.footer-tagline` ersetzt durch `.footer-credits` —
+  „Website & Digital Infrastructure by Endrulabs.ch" (klickbarer Link, 0.7rem, #888888, Hover gelb);
+  Copyright auf „© 2026/2027 Firmen Racing Cup · All Rights Reserved" aktualisiert
 
 ---
 
@@ -197,6 +200,7 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 | Inbegriffen-Box | `.includes-card`, `.includes-grid`, `.includes-col-label--yes/no`, `.includes-list` | kosten.html |
 | Bonus-Card Modifier | `.bonus-card--finale` | format.html |
 | Season-Status Dot | `.season-status.upcoming::before` | index.html |
+| Footer Credits | `.footer-credits`, `.footer-credits a` | alle Seiten |
 
 ---
 
@@ -264,6 +268,7 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 ## Aktueller Branch-Status (Stand 2026-06-29)
 
 - `main`: Stabil und aktuell. Alle Termine und Preise definitiv eingetragen. Keine offenen Feature-Branches.
+    - `d8936f2`: Footer Credits korrigiert — Endrulabs.ch, Copyright 2026/2027
   - `3d0ab28`: Eventkalender Saison 2026/2027 — 4 Events Aug/Sep/Okt 2026 + Finale Jan 2027
   - `9ddec04`: CLAUDE.md auf aktuellen Stand gebracht (2026-06-29)
   - `7d9908c`: Termine korrigiert (E02: 18. Feb. 2027, E03: 04. Mai 2027, Finale: 06. Jul. 2027)
