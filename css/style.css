@@ -1450,11 +1450,8 @@ footer::before {
 /* ══════════════════════════════════════════════════════════════
    LOGO FILTER — Dark Theme
    Lässer (CMYK): weisses PNG auf transparent → kein Filter
-   Menzi Muck: schwarz/rot → invertieren für dunklen Hintergrund
+   Menzi Muck: neues Logo weiss/rot → kein Filter nötig
 ══════════════════════════════════════════════════════════════ */
-img[src*="menzimuck.png"] {
-  filter: invert(1) hue-rotate(180deg);
-}
 
 /* ══════════════════════════════════════════════════════════════
    RESPONSIVE
