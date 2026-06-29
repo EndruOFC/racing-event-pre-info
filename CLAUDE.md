@@ -181,9 +181,7 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 - **CEO Quality Pass** (Commit `6692d03`): Neue Utility-Klassen in `css/style.css` —
   `.cta-row`, `.hero-page`, `.total-card`, `.total-table`, `.includes-card`, `.includes-grid`,
   `.kosten-card--gold`, `.kosten-card--blau`, `.bonus-card--finale`, `.countdown-strip-note`, `.timeline-desc`
-- **Footer-Credits** (Commit `d8936f2`): `.footer-tagline` ersetzt durch `.footer-credits` —
-  „Website & Digital Infrastructure by Endrulabs.ch" (klickbarer Link, 0.7rem, #888888, Hover gelb);
-  Copyright auf „© 2026/2027 Firmen Racing Cup · All Rights Reserved" aktualisiert
+- **Footer-Struktur** (identisch zu allen 3 Repos): Gradient-Trennlinie (Blau→Gelb→Blau) via `footer::before`; `.footer-presented` + `.footer-powered` in `#F5F5F5`; `.footer-credits` „Website & Digital Infrastructure by Endrulabs.ch" (#888888, Hover #FFD100); `.footer-copy` „© 2026/2027 Firmen Racing Cup · All Rights Reserved" (#666666). `.footer-tagline` (alt) vollständig entfernt.
 
 ---
 
@@ -262,6 +260,7 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 - [x] `aria-expanded` in FAQ-Buttons dynamisch korrekt gesetzt
 - [x] README.md auf aktuellen Stand gebracht
 - [x] CEO Quality Pass: Utility-Klassen in `css/style.css` (Inline-Styles abgebaut)
+- [x] Footer vereinheitlicht: Endrulabs.ch-Credits, Copyright, Gradient — identisch zu allen 3 Repos
 
 ---
 
