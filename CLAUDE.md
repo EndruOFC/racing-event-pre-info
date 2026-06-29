@@ -25,10 +25,10 @@ die ein Team anmelden oder sich über die Meisterschaft informieren wollen.
 
 | Event | Datum | Strecke | Kosten/Person |
 |-------|-------|---------|--------------|
-| Event 01 — Season Opener | Di. 13. Oktober 2026 | Spielberg South Course | CHF 90.— |
-| Event 02 — Round 2 | Mi. 18. Februar 2027 | Hockenheim / Brands Hatch | CHF 90.— |
-| Event 03 — Weather Challenge | Di. 04. Mai 2027 | Nürburgring Sprint GT | CHF 90.— |
-| Grand Finale | Di. 06. Juli 2027 | Nürburgring Nordschleife | CHF 180.— |
+| Event 01 — Season Opener | Do. 20. August 2026 | Spielberg South Course | CHF 90.— |
+| Event 02 — Round 2 | Do. 17. September 2026 | Hockenheim / Brands Hatch | CHF 90.— |
+| Event 03 — Weather Challenge | Do. 15. Oktober 2026 | Nürburgring Sprint GT | CHF 90.— |
+| Grand Finale | Fr. 16. Januar 2027 | Nürburgring Nordschleife | CHF 180.— |
 
 - Alle Events bei **Hybrid Racing Au SG**, Start jeweils ab **19:00 Uhr**
 - Format normal: 20' Training + 10' Qualifying + 60' Rennen
@@ -121,10 +121,10 @@ Kein serverseitiges Datenmodell – alles ist statischer HTML-Content.
 ### Saison-Struktur (hardcoded in format.html + index.html)
 ```
 4 Events — alle bei Hybrid Racing Au SG, ab 19:00 Uhr:
-├── Event 01 – Season Opener    | Di. 13. Okt. 2026 | Spielberg South Course      | 20' T + 10' Q + 60' R
-├── Event 02 – Round 2          | Mi. 18. Feb. 2027 | Hockenheim / Brands Hatch   | 20' T + 10' Q + 60' R
-├── Event 03 – Weather Challenge| Di. 04. Mai 2027  | Nürburgring Sprint GT       | 20' T + 10' Q + 90' R
-└── Grand Finale                | Di. 06. Jul. 2027 | Nürburgring Nordschleife    | 30' T + 30' Q + 3h R · ×2 Punkte
+├── Event 01 – Season Opener    | Do. 20. Aug. 2026 | Spielberg South Course      | 20' T + 10' Q + 60' R
+├── Event 02 – Round 2          | Do. 17. Sep. 2026 | Hockenheim / Brands Hatch   | 20' T + 10' Q + 60' R
+├── Event 03 – Weather Challenge| Do. 15. Okt. 2026 | Nürburgring Sprint GT       | 20' T + 10' Q + 90' R
+└── Grand Finale                | Fr. 16. Jan. 2027 | Nürburgring Nordschleife    | 30' T + 30' Q + 3h R · ×2 Punkte
 ```
 
 ### Preise (definitiv, pro Person)
@@ -145,7 +145,7 @@ Wertung: Teamwertung (2 Fahrer/Team), 8 Teams total
 
 ### Konfiguration (js/main.js)
 ```js
-CONFIG.SEASON_OPENER = '2026-10-13T19:00:00'  // Di. 13. Oktober 2026
+CONFIG.SEASON_OPENER = '2026-08-20T19:00:00'  // Do. 20. August 2026
 ```
 
 ### Cross-Site-Links (hardcoded im HTML, nicht per JS)
@@ -253,7 +253,7 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 
 ### Erledigt
 - [x] Preise eingetragen: CHF 90.— (normale Events) / CHF 180.— (Grand Finale)
-- [x] Season-Opener-Datum gesetzt: `2026-10-13T19:00:00`
+- [x] Season-Opener-Datum gesetzt: `2026-08-20T19:00:00` (Do. 20. August 2026)
 - [x] Alle Event-Termine in Timeline und Season-Grid befüllt
 - [x] `aria-expanded` in FAQ-Buttons dynamisch korrekt gesetzt
 - [x] README.md auf aktuellen Stand gebracht
@@ -264,10 +264,10 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 ## Aktueller Branch-Status (Stand 2026-06-29)
 
 - `main`: Stabil und aktuell. Alle Termine und Preise definitiv eingetragen. Keine offenen Feature-Branches.
+  - `3d0ab28`: Eventkalender Saison 2026/2027 — 4 Events Aug/Sep/Okt 2026 + Finale Jan 2027
+  - `9ddec04`: CLAUDE.md auf aktuellen Stand gebracht (2026-06-29)
   - `7d9908c`: Termine korrigiert (E02: 18. Feb. 2027, E03: 04. Mai 2027, Finale: 06. Jul. 2027)
   - `6692d03`: Eventdaten, Termine und Preise Saison 2026/2027 initial eingetragen
   - `365656f`: CEO Quality Check — Footer, Typografie, Platzhalter-Qualität
   - `ba084ea`: CLAUDE.md auf Stand gebracht
   - `27282d9`: Landing-Seite komplett umgebaut (Unsplash-Hero + Narrativ-Sektionen)
-  - `72dda8d`: Corporate Design-System verfeinert (Gaming-Elemente entfernt)
-  - `4a74f01`: Corporate Motorsport Design-System implementiert
