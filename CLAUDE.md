@@ -267,12 +267,12 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 
 ## Aktueller Branch-Status (Stand 2026-06-29)
 
-- `main`: Stabil und aktuell. Alle Termine und Preise definitiv eingetragen. Keine offenen Feature-Branches.
-    - `d8936f2`: Footer Credits korrigiert — Endrulabs.ch, Copyright 2026/2027
+- `main`: Stabil und aktuell. Keine offenen Feature-Branches.
+  - `88d649f`: CLAUDE.md — Footer-Änderungen dokumentiert
+  - `d8936f2`: Footer Credits korrigiert — Endrulabs.ch, Copyright 2026/2027
+  - `0d94ece`: CLAUDE.md auf aktuellen Stand gebracht (Eventkalender)
   - `3d0ab28`: Eventkalender Saison 2026/2027 — 4 Events Aug/Sep/Okt 2026 + Finale Jan 2027
   - `9ddec04`: CLAUDE.md auf aktuellen Stand gebracht (2026-06-29)
   - `7d9908c`: Termine korrigiert (E02: 18. Feb. 2027, E03: 04. Mai 2027, Finale: 06. Jul. 2027)
   - `6692d03`: Eventdaten, Termine und Preise Saison 2026/2027 initial eingetragen
   - `365656f`: CEO Quality Check — Footer, Typografie, Platzhalter-Qualität
-  - `ba084ea`: CLAUDE.md auf Stand gebracht
-  - `27282d9`: Landing-Seite komplett umgebaut (Unsplash-Hero + Narrativ-Sektionen)
