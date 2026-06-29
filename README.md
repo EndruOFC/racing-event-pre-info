@@ -10,9 +10,9 @@ Presented by **Lässer Stickmaschinen** & **Menzi Muck AG** | Hosted at **Hybrid
 | Event | Datum | Strecke | Kosten/Person |
 |-------|-------|---------|--------------|
 | Event 01 — Season Opener | Di. 13. Oktober 2026 | Spielberg South Course | CHF 90.— |
-| Event 02 — Round 2 | Mi. 11. November 2026 | Hockenheim / Brands Hatch | CHF 90.— |
-| Event 03 — Weather Challenge | Di. 08. Dezember 2026 | Nürburgring Sprint GT | CHF 90.— |
-| Grand Finale | Di. 07. Juli 2027 | Nürburgring Nordschleife | CHF 180.— |
+| Event 02 — Round 2 | Mi. 18. Februar 2027 | Hockenheim / Brands Hatch | CHF 90.— |
+| Event 03 — Weather Challenge | Di. 04. Mai 2027 | Nürburgring Sprint GT | CHF 90.— |
+| Grand Finale | Di. 06. Juli 2027 | Nürburgring Nordschleife | CHF 180.— |
 
 Alle Events bei **Hybrid Racing Au SG**, Start jeweils ab 19:00 Uhr.
 
