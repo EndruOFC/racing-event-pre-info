@@ -49,15 +49,15 @@
 
   <div class="section-divider"></div>
 
-  <!-- Hinweisbox -->
+  <!-- Info-Box -->
   <section class="section-sm">
     <div class="container">
       <div class="hinweis-box">
         <span class="hinweis-icon">ℹ️</span>
         <div class="hinweis-text">
-          <strong>Preise werden nach Abklärung mit Hybrid Racing kommuniziert.</strong>
-          Die untenstehenden Angaben sind Platzhalter. Alle Teilnehmenden werden direkt
-          informiert, sobald die definitiven Konditionen vorliegen.
+          Die Eventgebühr beinhaltet die Nutzung der Sim-Racing-Anlage bei
+          <strong>Hybrid Racing Au SG</strong> sowie die Teilnahme am offiziellen
+          Rennbetrieb. Verpflegung ist nicht inbegriffen.
         </div>
       </div>
     </div>
@@ -69,114 +69,107 @@
       <span class="section-label">Kostenstruktur</span>
       <h2 class="section-heading">Was kostet <span class="gelb">die Teilnahme?</span></h2>
       <p class="section-sub">
-        Alle Preise verstehen sich pro Team (2 Fahrer). Inbegriffen sind jeweils
+        Alle Preise verstehen sich pro Person. Inbegriffen sind jeweils
         die Simulator-Nutzung bei Hybrid Racing sowie die Rennleitung.
       </p>
 
       <div class="kosten-grid">
 
         <div class="kosten-card">
-          <div class="kosten-icon">📋</div>
-          <div class="kosten-title">Teilnahmegebühr</div>
-          <div class="kosten-preis">
-            <span class="tbd-badge">Wird kommuniziert</span>
-          </div>
+          <div class="kosten-icon">🎮</div>
+          <div class="kosten-title">Event 01 — Season Opener</div>
+          <div class="kosten-preis">CHF 90.—</div>
           <div class="kosten-info">
-            Einmalige Anmeldegebühr pro Team (2 Fahrer).<br>
-            Deckt Organisation, Zeitnahme und Verwaltung ab.
+            Spielberg South Course · Di. 13. Oktober 2026<br>
+            20' Training + 10' Qualifying + 60' Rennen<br>
+            Inbegriffen: Sim-Nutzung, Rennleitung, Zeitnahme.
           </div>
         </div>
 
         <div class="kosten-card">
           <div class="kosten-icon">🎮</div>
-          <div class="kosten-title">Pro Rennabend</div>
-          <div class="kosten-preis">
-            <span class="tbd-badge">Wird kommuniziert</span>
-          </div>
+          <div class="kosten-title">Event 02 — Round 2</div>
+          <div class="kosten-preis">CHF 90.—</div>
           <div class="kosten-info">
-            Simulator-Miete bei Hybrid Racing pro Rennabend.<br>
-            3 Rennabende · Preis wird kommuniziert<br>
-            Inbegriffen: Setup, Support, Renndurchführung.
+            Hockenheim / Brands Hatch · Mi. 11. November 2026<br>
+            20' Training + 10' Qualifying + 60' Rennen<br>
+            Inbegriffen: Sim-Nutzung, Rennleitung, Zeitnahme.
           </div>
         </div>
 
-        <div class="kosten-card" style="border-left-color:var(--gold);background:linear-gradient(135deg,rgba(201,168,76,.06) 0%,var(--karte) 100%);">
+        <div class="kosten-card">
+          <div class="kosten-icon">🌦️</div>
+          <div class="kosten-title">Event 03 — Weather Challenge</div>
+          <div class="kosten-preis">CHF 90.—</div>
+          <div class="kosten-info">
+            Nürburgring Sprint GT · Di. 08. Dezember 2026<br>
+            20' Training + 10' Qualifying + 90' Rennen<br>
+            Inbegriffen: Sim-Nutzung, Rennleitung, Zeitnahme.
+          </div>
+        </div>
+
+        <div class="kosten-card kosten-card--gold">
           <div class="kosten-icon">🏆</div>
-          <div class="kosten-title">Grand Finale</div>
-          <div class="kosten-preis" style="color:var(--gold);">
-            <span class="tbd-badge">Wird kommuniziert</span>
-          </div>
+          <div class="kosten-title">Grand Finale — Nordschleife</div>
+          <div class="kosten-preis">CHF 180.—</div>
           <div class="kosten-info">
-            Nordschleife · 3 Stunden Rennen<br>
-            Inbegriffen: Nachtessen / Apéro, Pokale &amp; Siegerehrung.<br>
-            Das Highlight der Saison!
-          </div>
-        </div>
-
-        <div class="kosten-card" style="border-left-color:var(--blau);">
-          <div class="kosten-icon">🤝</div>
-          <div class="kosten-title">Gruppenrabatt</div>
-          <div class="kosten-preis">
-            <span class="placeholder" style="font-size:1rem;">Wird verhandelt</span>
-          </div>
-          <div class="kosten-info">
-            Bei Buchung aller 4 Events (3 Rennabende + Grand Finale)
-            als Paket wird ein Gruppenrabatt angestrebt.<br>
-            Details folgen nach Abklärung.
+            Nürburgring Nordschleife · Di. 07. Juli 2027<br>
+            30' Training + 30' Qualifying + 3h Rennen · ×2 Punkte<br>
+            Inbegriffen: Sim-Nutzung, Rennleitung, Pokale &amp; Siegerehrung.
           </div>
         </div>
 
       </div>
 
       <!-- Gesamtübersicht -->
-      <div style="background:var(--karte);border:1px solid var(--rand);border-radius:var(--radius-lg);padding:1.75rem;margin-bottom:2rem;">
-        <div style="font-family:var(--font-head);font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gelb);margin-bottom:1.25rem;padding-bottom:.75rem;border-bottom:1px solid rgba(255,209,0,.12);">
-          Gesamtkosten pro Team (Schätzung)
-        </div>
-        <table style="width:100%;border-collapse:collapse;font-size:.9rem;">
+      <div class="total-card">
+        <span class="total-card-label">Gesamtkosten pro Person — alle 4 Events</span>
+        <table class="total-table">
           <tbody>
-            <tr style="border-bottom:1px solid rgba(255,209,0,.07);">
-              <td style="padding:.6rem 0;color:var(--text-dim);">Teilnahmegebühr (1×)</td>
-              <td style="padding:.6rem 0;text-align:right;font-family:var(--font-head);color:var(--text);">auf Anfrage</td>
-            </tr>
-            <tr style="border-bottom:1px solid rgba(255,209,0,.07);">
-              <td style="padding:.6rem 0;color:var(--text-dim);">Rennabende (3×)</td>
-              <td style="padding:.6rem 0;text-align:right;font-family:var(--font-head);color:var(--text);">auf Anfrage</td>
-            </tr>
-            <tr style="border-bottom:1px solid rgba(255,209,0,.07);">
-              <td style="padding:.6rem 0;color:var(--text-dim);">Grand Finale (1×)</td>
-              <td style="padding:.6rem 0;text-align:right;font-family:var(--font-head);color:var(--gold);">auf Anfrage</td>
+            <tr>
+              <td>Event 01 — Season Opener (Di. 13. Okt. 2026)</td>
+              <td>CHF 90.—</td>
             </tr>
             <tr>
-              <td style="padding:.9rem 0 0;font-weight:700;color:var(--text);">Total pro Team</td>
-              <td style="padding:.9rem 0 0;text-align:right;font-family:var(--font-head);font-size:1.2rem;font-weight:900;color:var(--gelb);">auf Anfrage</td>
+              <td>Event 02 — Round 2 (Mi. 11. Nov. 2026)</td>
+              <td>CHF 90.—</td>
+            </tr>
+            <tr>
+              <td>Event 03 — Weather Challenge (Di. 08. Dez. 2026)</td>
+              <td>CHF 90.—</td>
+            </tr>
+            <tr class="row-finale">
+              <td>Grand Finale — Nordschleife (Di. 07. Jul. 2027)</td>
+              <td>CHF 180.—</td>
+            </tr>
+            <tr class="row-total">
+              <td>Total pro Person (alle 4 Events)</td>
+              <td>CHF 450.—</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <!-- Was ist inbegriffen -->
-      <div style="background:var(--karte);border:1px solid var(--rand);border-top:3px solid var(--gelb);border-radius:var(--radius-lg);padding:1.75rem;">
-        <div style="font-family:var(--font-head);font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gelb);margin-bottom:1.25rem;">
-          Was ist inbegriffen?
-        </div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;">
+      <div class="includes-card">
+        <span class="includes-card-label">Was ist inbegriffen?</span>
+        <div class="includes-grid">
           <div>
-            <div style="color:var(--gelb);font-weight:700;margin-bottom:.5rem;">✓ Inbegriffen</div>
-            <ul style="list-style:none;color:var(--text-dim);font-size:.9rem;line-height:2;">
-              <li>✓ Simulator-Nutzung (Hybrid Racing)</li>
+            <div class="includes-col-label includes-col-label--yes">Inbegriffen</div>
+            <ul class="includes-list">
+              <li>✓ Sim-Racing-Anlage (Hybrid Racing)</li>
               <li>✓ Professionelle Rennleitung</li>
               <li>✓ Elektronische Zeitnahme</li>
               <li>✓ Ranglisten &amp; Statistiken</li>
-              <li>✓ Nachtessen / Apéro (Grand Finale)</li>
-              <li>✓ Pokale &amp; Siegerehrung</li>
+              <li>✓ Pokale &amp; Siegerehrung (Grand Finale)</li>
             </ul>
           </div>
           <div>
-            <div style="color:var(--text-dim);font-weight:700;margin-bottom:.5rem;">— Nicht inbegriffen</div>
-            <ul style="list-style:none;color:var(--text-dim);font-size:.9rem;line-height:2;opacity:.7;">
+            <div class="includes-col-label includes-col-label--no">Nicht inbegriffen</div>
+            <ul class="includes-list includes-list--muted">
+              <li>— Apéro / Nachtessen</li>
+              <li>— Getränke</li>
               <li>— Anreise / Parkplatz</li>
-              <li>— Persönliche Verpflegung (Rennabende)</li>
               <li>— Eigene Controller (optional)</li>
             </ul>
           </div>

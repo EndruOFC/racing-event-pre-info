@@ -5,10 +5,7 @@
 
 /* ── Konfiguration ─────────────────────────────────────────── */
 const CONFIG = {
-  // Datum Season Opener – anpassen sobald Termin feststeht
-  SEASON_OPENER: '2026-09-01T18:00:00',
-  // Hinweis: Anmelde-/Rangliste-Links liegen direkt im href der Buttons
-  // (robuster gegen Caching als per JS gesetzte Links).
+  SEASON_OPENER: '2026-10-13T19:00:00',
 };
 
 /* ── Navigation: Hamburger + aktiver Link ──────────────────── */
@@ -102,11 +99,15 @@ function initAccordion() {
       const item = btn.closest('.faq-item');
       const istOffen = item.classList.contains('offen');
 
-      // Alle schließen
-      document.querySelectorAll('.faq-item.offen').forEach(o => o.classList.remove('offen'));
+      document.querySelectorAll('.faq-item.offen').forEach(o => {
+        o.classList.remove('offen');
+        o.querySelector('.faq-frage').setAttribute('aria-expanded', 'false');
+      });
 
-      // Dieses öffnen, sofern es vorher zu war
-      if (!istOffen) item.classList.add('offen');
+      if (!istOffen) {
+        item.classList.add('offen');
+        btn.setAttribute('aria-expanded', 'true');
+      }
     });
   });
 }
