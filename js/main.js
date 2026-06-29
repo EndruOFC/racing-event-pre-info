@@ -5,7 +5,7 @@
 
 /* ── Konfiguration ─────────────────────────────────────────── */
 const CONFIG = {
-  SEASON_OPENER: '2026-10-13T19:00:00',
+  SEASON_OPENER: '2026-08-20T19:00:00',
 };
 
 /* ── Navigation: Hamburger + aktiver Link ──────────────────── */
