@@ -172,8 +172,9 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 - **Fliesstext-Farbe weiss** — alle Beschreibungs- und Body-Texte (`--color-text`) statt grau (`--color-text-muted`). Grau bleibt nur für UI-Elemente: Nav-Links, Countdown-Labels, Badges, Buttons, Footer-Nav (Commit `86fb076`)
 - **Menzi-Muck-Logo** neues PNG (weiss/rot auf transparent) — CSS-Filter `invert()` entfernt (war Workaround für altes schwarz/rotes Logo)
 - **Keine Emojis in UI** — Rule-Cards: nummerische Icons `01`–`06` (Orbitron/Gelb); Kosten-Cards: `E.01`–`E.03` / `GF`; Hinweis-Icons: `▸` (Typografie-Zeichen). Emojis wirkten Gaming-assoziiert, nicht corporate (Commit `a7eddc8`)
-- **Hybrid Racing Logo** — kein Logo-Asset vorhanden; `.company-initials` mit `"HR"` (blauer Kreis, Orbitron) als professioneller Platzhalter statt Wordmark-Box (Commit `a7eddc8`)
-- **Sub-Page-Hero** — alle 3 Sub-Pages (`format.html`, `kosten.html`, `faq.html`) verwenden `class="hero hero-page"` statt Inline-Styles; `.hero-page` definiert `min-height: 44vh` + Padding
+- **Hybrid Racing Logo** — kein Logo-Asset vorhanden; `.company-wordmark` (Orbitron-Text in blauer Border-Box) als Platzhalter; ersetzt früheres `.company-initials "HR"` (Commit `a4c9dc9`)
+- **Sub-Page-Hero** — alle 3 Sub-Pages (`format.html`, `kosten.html`, `faq.html`) verwenden `class="hero hero-page"`; `.hero-page` definiert `min-height: 56vh` + Padding (vormals 44vh, erhöht für mehr Präsenz)
+- **CEO Quality Pass III** (Commit `a4c9dc9`): Lesbarkeit und Konsistenz — `.tag-datum`, `.points-table td`, `.total-table td`, `.countdown-strip .countdown-label` von `--color-text-muted` auf `--color-text` (weiss); Titel-Tags aller Seiten auf „2026/2027" vereinheitlicht; Bonus-Card Inline-Styles durch `.bonus-card--finale` ersetzt; `format.html` CTA zweiten Button ergänzt
 - **Timeline Finale** — Nummernkreis zeigt `GF` statt `F` (klarer, kein Buchstaben-Placeholder-Look)
 - **`footer-copy`** — Farbe `--color-text-muted` (#888888) statt `--text-dunkel` (#4A4A4A); war auf dunklem Hintergrund nahezu unsichtbar
 - **Lässer-Logo** in CMYK-Variante für Hero/Footer, RGB-Variante vorhanden aber ungenutzt
@@ -250,7 +251,7 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 - [ ] CNAME-Datei committen (Custom Domain `info.racing-cup-2026.ch`)
 
 ### Niedrig
-- [ ] Hybrid Racing: echtes Logo-Asset besorgen → ersetzt `.company-initials "HR"`-Platzhalter
+- [ ] Hybrid Racing: echtes Logo-Asset besorgen → ersetzt `.company-wordmark`-Platzhalter
 - [ ] Impressum / Datenschutzerklärung (Schweizer DSG / nDSG)
 - [ ] Favicon als echte `.ico`/`.png`-Datei (aktuell nur `data:URI` inline SVG)
 - [ ] 404-Seite für GitHub Pages (`404.html`)
@@ -269,14 +270,15 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 - [x] Fliesstext-Farbe: grau → weiss für alle Body/Beschreibungstexte (Commit `86fb076`)
 - [x] Menzi-Muck-Logo: neues weisses/rotes PNG, CSS-Filter entfernt (Commit `2e100e1`)
 - [x] CEO Quality Pass II: Emojis ersetzt, FAQ-Daten korrigiert, HR-Badge, Inline-Styles bereinigt, `footer-copy` sichtbar, `section-sub` zentriert (Commit `a7eddc8`)
+- [x] CEO Quality Pass III: Tabellen/Datum-Tags weiss, Sub-Page-Hero auf 56vh, Titel auf 2026/2027 vereinheitlicht, Bonus-Card-Klasse, format.html CTA zweiter Button, HR Wordmark (Commit `a4c9dc9`)
 
 ---
 
 ## Aktueller Branch-Status (Stand 2026-06-30)
 
 - `main`: Stabil und aktuell. Keine offenen Feature-Branches.
-  - `a7eddc8`: Design: CEO Quality Pass — Emojis, Placeholder, Daten, Inline-Styles bereinigt
+  - `a4c9dc9`: Fix: CEO Quality Pass III — Lesbarkeit, Konsistenz, Markennamen
+  - `a7eddc8`: Design: CEO Quality Pass II — Emojis, Placeholder, Daten, Inline-Styles bereinigt
   - `023ba60`: Docs: CLAUDE.md Branch-Status + Fliesstext-Entscheidung aktualisiert
   - `86fb076`: Fix: Fliesstext-Farbe grau zu weiss (17 CSS-Klassen)
   - `dc8dece`: Docs: README.md Ordnerstruktur um header-pre-event.png ergänzt
-  - `19d50af`: Assets: Hero-Hintergrundbild durch lokales header-pre-event.png ersetzt
