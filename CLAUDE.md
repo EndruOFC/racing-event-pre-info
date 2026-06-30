@@ -56,8 +56,8 @@ für Inline-Styles in HTML. Beide Formen sind verwendbar.
 Fonts: **Orbitron** (Headlines, monospace Motorsport-Font) · **Rajdhani** (Body, 300–700)
 Beide via Google Fonts CDN geladen.
 
-Logo-Besonderheit: `menzimuck.png` hat schwarzes/rotes Original →
-CSS-Filter `invert(1) hue-rotate(180deg)` macht es für Dark-Theme nutzbar.
+Logo-Besonderheit: `menzimuck.png` ist weiss/rot auf transparent → kein CSS-Filter nötig.
+Hybrid Racing hat kein Logo-Asset → `.company-initials` mit "HR" als Platzhalter.
 
 ---
 
@@ -171,6 +171,11 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
   als Overlay über dem Foto-Hero. SVG verwendet `currentColor` für Farbkontrolle.
 - **Fliesstext-Farbe weiss** — alle Beschreibungs- und Body-Texte (`--color-text`) statt grau (`--color-text-muted`). Grau bleibt nur für UI-Elemente: Nav-Links, Countdown-Labels, Badges, Buttons, Footer-Nav (Commit `86fb076`)
 - **Menzi-Muck-Logo** neues PNG (weiss/rot auf transparent) — CSS-Filter `invert()` entfernt (war Workaround für altes schwarz/rotes Logo)
+- **Keine Emojis in UI** — Rule-Cards: nummerische Icons `01`–`06` (Orbitron/Gelb); Kosten-Cards: `E.01`–`E.03` / `GF`; Hinweis-Icons: `▸` (Typografie-Zeichen). Emojis wirkten Gaming-assoziiert, nicht corporate (Commit `a7eddc8`)
+- **Hybrid Racing Logo** — kein Logo-Asset vorhanden; `.company-initials` mit `"HR"` (blauer Kreis, Orbitron) als professioneller Platzhalter statt Wordmark-Box (Commit `a7eddc8`)
+- **Sub-Page-Hero** — alle 3 Sub-Pages (`format.html`, `kosten.html`, `faq.html`) verwenden `class="hero hero-page"` statt Inline-Styles; `.hero-page` definiert `min-height: 44vh` + Padding
+- **Timeline Finale** — Nummernkreis zeigt `GF` statt `F` (klarer, kein Buchstaben-Placeholder-Look)
+- **`footer-copy`** — Farbe `--color-text-muted` (#888888) statt `--text-dunkel` (#4A4A4A); war auf dunklem Hintergrund nahezu unsichtbar
 - **Lässer-Logo** in CMYK-Variante für Hero/Footer, RGB-Variante vorhanden aber ungenutzt
 - **Responsive Breakpoints**: 768px (Hamburger-Nav, einspaltiges Hero-Logo) + 500px (Einspalt-Grids)
 - **FAQ-Accordion** via CSS `max-height` (kein JS für Höhe nötig); `aria-expanded` wird per JS korrekt gesetzt
@@ -200,6 +205,7 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 | Bonus-Card Modifier | `.bonus-card--finale` | format.html |
 | Season-Status Dot | `.season-status.upcoming::before` | index.html |
 | Footer Credits | `.footer-credits`, `.footer-credits a` | alle Seiten |
+| Section Padding Reducer | `.section--pt-sm` | kosten.html |
 
 ---
 
@@ -209,7 +215,7 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 |-------|--------|-----------|
 | `logos/LAESSER-Logo_CMYK.png` | PNG (weiß auf transparent) | Hero, Partner-Bereich, Footer – kein Filter nötig |
 | `logos/LAESSER-Logo_RGB.png` | PNG (weiß auf transparent) | Derzeit ungenutzt (Reserve) |
-| `logos/menzimuck.png` | PNG (schwarz/rot auf transparent) | Überall – mit CSS-Filter invertiert |
+| `logos/menzimuck.png` | PNG (weiss/rot auf transparent) | Überall – kein Filter nötig |
 | `assets/header-pre-event.png` | PNG | Hero-Hintergrundbild auf `index.html` |
 | `assets/porsche-silhouette.svg` | SVG (`currentColor`) | Hero-Overlay als `.hero-car` (opacity via CSS) |
 
@@ -237,17 +243,14 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 
 ---
 
-## Offene Punkte (Stand 2026-06-29)
+## Offene Punkte (Stand 2026-06-30)
 
 ### Hoch
 - [ ] Open-Graph-Meta-Tags auf allen Seiten (`og:title`, `og:description`, `og:image`)
 - [ ] CNAME-Datei committen (Custom Domain `info.racing-cup-2026.ch`)
 
-### Mittel
-- [ ] Menzi-Muck-Logo: weisses PNG direkt bei Menzi Muck besorgen (CSS-Filter-Hack vermeiden)
-- [ ] Partner-Logo-Slots befüllen oder Platzhalter entfernen (2× `+ Partner` in `index.html`)
-
 ### Niedrig
+- [ ] Hybrid Racing: echtes Logo-Asset besorgen → ersetzt `.company-initials "HR"`-Platzhalter
 - [ ] Impressum / Datenschutzerklärung (Schweizer DSG / nDSG)
 - [ ] Favicon als echte `.ico`/`.png`-Datei (aktuell nur `data:URI` inline SVG)
 - [ ] 404-Seite für GitHub Pages (`404.html`)
@@ -257,20 +260,23 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 ### Erledigt
 - [x] Preise eingetragen: CHF 90.— (normale Events) / CHF 180.— (Grand Finale)
 - [x] Season-Opener-Datum gesetzt: `2026-08-20T19:00:00` (Do. 20. August 2026)
-- [x] Alle Event-Termine in Timeline und Season-Grid befüllt
+- [x] Alle Event-Termine in Timeline, Season-Grid und FAQ befüllt und konsistent
 - [x] `aria-expanded` in FAQ-Buttons dynamisch korrekt gesetzt
 - [x] README.md auf aktuellen Stand gebracht
 - [x] Hero-Bild: Unsplash-URL durch lokales `assets/header-pre-event.png` ersetzt (Commit `19d50af`)
-- [x] CEO Quality Pass: Utility-Klassen in `css/style.css` (Inline-Styles abgebaut)
+- [x] CEO Quality Pass I: Utility-Klassen in `css/style.css` (Inline-Styles abgebaut)
 - [x] Footer vereinheitlicht: Endrulabs.ch-Credits, Copyright, Gradient — identisch zu allen 3 Repos
+- [x] Fliesstext-Farbe: grau → weiss für alle Body/Beschreibungstexte (Commit `86fb076`)
+- [x] Menzi-Muck-Logo: neues weisses/rotes PNG, CSS-Filter entfernt (Commit `2e100e1`)
+- [x] CEO Quality Pass II: Emojis ersetzt, FAQ-Daten korrigiert, HR-Badge, Inline-Styles bereinigt, `footer-copy` sichtbar, `section-sub` zentriert (Commit `a7eddc8`)
 
 ---
 
 ## Aktueller Branch-Status (Stand 2026-06-30)
 
 - `main`: Stabil und aktuell. Keine offenen Feature-Branches.
+  - `a7eddc8`: Design: CEO Quality Pass — Emojis, Placeholder, Daten, Inline-Styles bereinigt
+  - `023ba60`: Docs: CLAUDE.md Branch-Status + Fliesstext-Entscheidung aktualisiert
   - `86fb076`: Fix: Fliesstext-Farbe grau zu weiss (17 CSS-Klassen)
   - `dc8dece`: Docs: README.md Ordnerstruktur um header-pre-event.png ergänzt
   - `19d50af`: Assets: Hero-Hintergrundbild durch lokales header-pre-event.png ersetzt
-  - `7e30ba2`: Docs: CLAUDE.md Menzi-Muck-Filter + Branch-Status aktualisiert
-  - `2e100e1`: Fix: Menzi-Muck CSS-Filter entfernt (neues Logo weiss/rot)
