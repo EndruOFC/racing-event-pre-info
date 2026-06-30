@@ -169,6 +169,7 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
   nur auf Sub-Pages (`format.html`, `kosten.html`, `faq.html`) aktiv; `index.html` Hero hat Foto-Background
 - **Porsche-Silhouette** als `.hero-car` `<img>`-Tag (`assets/porsche-silhouette.svg`), positioniert
   als Overlay über dem Foto-Hero. SVG verwendet `currentColor` für Farbkontrolle.
+- **Fliesstext-Farbe weiss** — alle Beschreibungs- und Body-Texte (`--color-text`) statt grau (`--color-text-muted`). Grau bleibt nur für UI-Elemente: Nav-Links, Countdown-Labels, Badges, Buttons, Footer-Nav (Commit `86fb076`)
 - **Menzi-Muck-Logo** neues PNG (weiss/rot auf transparent) — CSS-Filter `invert()` entfernt (war Workaround für altes schwarz/rotes Logo)
 - **Lässer-Logo** in CMYK-Variante für Hero/Footer, RGB-Variante vorhanden aber ungenutzt
 - **Responsive Breakpoints**: 768px (Hamburger-Nav, einspaltiges Hero-Logo) + 500px (Einspalt-Grids)
@@ -265,11 +266,11 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 
 ---
 
-## Aktueller Branch-Status (Stand 2026-06-29)
+## Aktueller Branch-Status (Stand 2026-06-30)
 
 - `main`: Stabil und aktuell. Keine offenen Feature-Branches.
+  - `86fb076`: Fix: Fliesstext-Farbe grau zu weiss (17 CSS-Klassen)
+  - `dc8dece`: Docs: README.md Ordnerstruktur um header-pre-event.png ergänzt
   - `19d50af`: Assets: Hero-Hintergrundbild durch lokales header-pre-event.png ersetzt
   - `7e30ba2`: Docs: CLAUDE.md Menzi-Muck-Filter + Branch-Status aktualisiert
   - `2e100e1`: Fix: Menzi-Muck CSS-Filter entfernt (neues Logo weiss/rot)
-  - `6755517`: Assets: Menzi-Muck-Logo aktualisiert (11 KB → 104 KB)
-  - `05549f3`: Docs: CLAUDE.md Footer-Stand aktualisiert
