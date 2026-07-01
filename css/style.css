@@ -484,6 +484,14 @@ a:focus-visible            { outline: 2px solid var(--color-primary); outline-of
   color: var(--color-text);
 }
 
+.countdown-live-note {
+  color: var(--color-primary);
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  letter-spacing: .1em;
+  margin-top: .5rem;
+}
+
 /* ══════════════════════════════════════════════════════════════
    HIGHLIGHT-KACHELN — Left-Border Gelb
 ══════════════════════════════════════════════════════════════ */
@@ -1315,13 +1323,13 @@ footer::before {
   font-family: var(--font-display);
   font-size: .72rem;
   font-weight: 700;
-  color: var(--color-secondary);
+  color: var(--color-text);
   letter-spacing: .18em;
   text-transform: uppercase;
   padding: .55rem 1.1rem;
-  border: 1px solid rgba(0, 48, 135, .32);
+  border: 1px solid var(--color-secondary);
   border-radius: var(--radius);
-  background: rgba(0, 48, 135, .08);
+  background: var(--color-secondary);
   line-height: 1.3;
   text-align: center;
 }
@@ -1480,6 +1488,7 @@ footer::before {
   .navbar-links .nav-cta { margin: .5rem 1.5rem; text-align: center; }
   .nav-toggle            { display: flex; }
   .navbar                { position: relative; }
+  .navbar-brand          { font-size: .6rem; letter-spacing: .1em; gap: .4rem; }
 
   .points-layout { grid-template-columns: 1fr; }
   .podium        { margin-bottom: 2rem; }

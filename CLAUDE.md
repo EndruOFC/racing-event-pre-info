@@ -69,7 +69,7 @@ Hybrid Racing hat kein Logo-Asset → `.company-initials` mit "HR" als Platzhalt
 - **Parallax** – Inline `<script>` am Ende von `index.html` (außerhalb von `main.js`) via `translateY` auf `.hero-bg`
 - **Fonts** – Google Fonts CDN (Orbitron + Rajdhani)
 - **Assets** – SVG-Silhouette in `assets/`, Logos (PNG) in `logos/`
-- **Hero-Bild** – lokales Asset `assets/header-pre-event.png` im `style`-Attribut von `#heroBg`
+- **Hero-Bild** – lokales Asset `assets/header-pre-event.jpg` im `style`-Attribut von `#heroBg`
 - **Deployment** – GitHub Pages, Branch `main`, Root `/`
 - **Favicon** – Inline `data:URI` SVG (kein eigenes Favicon-File)
 
@@ -79,7 +79,7 @@ Hybrid Racing hat kein Logo-Asset → `.company-initials` mit "HR" als Platzhalt
 
 | Datei | Inhalt | Besonderheiten |
 |-------|--------|---------------|
-| `index.html` | Vollbild-Hero mit Foto + Parallax, Narrativ-Quote, Company-Grid (3 Karten), Saison-Grid (4 Karten), CTA-Block | Lokales Hero-Bild `assets/header-pre-event.png`; Porsche-Silhouette als `.hero-car`-Overlay; Parallax per Inline-Script |
+| `index.html` | Vollbild-Hero mit Foto + Parallax, Narrativ-Quote, Company-Grid (3 Karten), Saison-Grid (4 Karten), CTA-Block | Lokales Hero-Bild `assets/header-pre-event.jpg`; Porsche-Silhouette als `.hero-car`-Overlay; Parallax per Inline-Script |
 | `format.html` | Saisonkalender (Timeline), Regelwerk (6 Cards), Punktesystem (Podium + Tabelle + Bonus) | Standard-Hero (CSS only, kein Foto); Podium mit Shimmer-Animation |
 | `kosten.html` | 4 Event-Karten mit definitiven Preisen, Gesamttabelle (CHF 450.—/Person), Inbegriffen-Liste | Preise definitiv: CHF 90.— / CHF 180.—; Hinweis-Box über Verpflegung |
 | `faq.html` | 9 FAQ-Accordion-Items | Accordion per CSS max-height; `aria-expanded` wird per JS korrekt gesetzt |
@@ -91,7 +91,7 @@ Navigation und Footer sind **4× kopiert** (kein Include-Mechanismus).
 
 ```
 <header class="hero hero-main">
-  .hero-img-wrap                 ← Lokales Foto (header-pre-event.png) + Overlay
+  .hero-img-wrap                 ← Lokales Foto (header-pre-event.jpg) + Overlay
     #heroBg                      ← Parallax-Target (JS translateY)
     .hero-overlay
   .hero-logos                    ← Dual-Logo-Reihe (Lässer / Menzi Muck)
@@ -161,7 +161,7 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 - **Dark-Theme only** – kein Light-Mode-Toggle; bewusste Motorsport-Ästhetik-Entscheidung
 - **Cross-Site-Links direkt im href** (nicht via JS-Variable) – robuster gegen Browser-Caching
   (Commit `aefdb2b`, PR #10 gemergt)
-- **Hero `index.html` nutzt lokales Foto** – `assets/header-pre-event.png` direkt im `style`-Attribut
+- **Hero `index.html` nutzt lokales Foto** – `assets/header-pre-event.jpg` direkt im `style`-Attribut
   von `#heroBg`. Ersetzt vorherige Unsplash-URL (Commit `19d50af`).
 - **Parallax auf index.html**: Inline-IIFE am Seitenende manipuliert `#heroBg.style.transform`
   (nur Desktop ≥ 768 px). Nicht in `main.js` ausgelagert – bewusste Entscheidung für Inline-Scope.
@@ -186,6 +186,7 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 - **Navbar-Hintergrund** verdunkelt sich via JS-scroll-Listener (`rgba(10,10,10,.85)` → `.97`);
   kein CSS-only Shrink (Unterschied zu Racing-Event-Sing-In, das `.navbar--shrunk` nutzt)
 - **Anmeldeschluss-Badge** (Commit `6bef146`): `.deadline-badge` — rot hinterlegt (`rgba(220,38,38,.10)`), rote Border, `#fc8181` Text, Orbitron/Uppercase. Platziert in `index.html` unter Hero-CTAs und unter CTA-Block-Buttons. Zeigt „⚠ Anmeldeschluss: 31. August 2026".
+- **Navbar-Brand**: `Firmen Racing Cup 2026/2027` (nicht gekürzt) auf allen 4 Seiten — Corporate-Identity-Anforderung, analog zum Schwester-Repo `firmen-racing-cup-2026`. Bei ≤768px reduziert `.navbar-brand` auf `.6rem`/`.1em` Letter-Spacing, damit der volle Markenname auf schmalen Mobilgeräten nicht umbricht.
 - **CEO Quality Pass** (Commit `6692d03`): Neue Utility-Klassen in `css/style.css` —
   `.cta-row`, `.hero-page`, `.total-card`, `.total-table`, `.includes-card`, `.includes-grid`,
   `.kosten-card--gold`, `.kosten-card--blau`, `.bonus-card--finale`, `.countdown-strip-note`, `.timeline-desc`
@@ -219,7 +220,7 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 | `logos/LAESSER-Logo_CMYK.png` | PNG (weiß auf transparent) | Hero, Partner-Bereich, Footer – kein Filter nötig |
 | `logos/LAESSER-Logo_RGB.png` | PNG (weiß auf transparent) | Derzeit ungenutzt (Reserve) |
 | `logos/menzimuck.png` | PNG (weiss/rot auf transparent) | Überall – kein Filter nötig |
-| `assets/header-pre-event.png` | PNG | Hero-Hintergrundbild auf `index.html` |
+| `assets/header-pre-event.jpg` | JPEG | Hero-Hintergrundbild auf `index.html` (optimiert, ~0.48 MB) |
 | `assets/porsche-silhouette.svg` | SVG (`currentColor`) | Hero-Overlay als `.hero-car` (opacity via CSS) |
 
 ---
@@ -273,6 +274,7 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 - [x] Menzi-Muck-Logo: neues weisses/rotes PNG, CSS-Filter entfernt (Commit `2e100e1`)
 - [x] CEO Quality Pass II: Emojis ersetzt, FAQ-Daten korrigiert, HR-Badge, Inline-Styles bereinigt, `footer-copy` sichtbar, `section-sub` zentriert (Commit `a7eddc8`)
 - [x] CEO Quality Pass III: Tabellen/Datum-Tags weiss, Sub-Page-Hero auf 56vh, Titel auf 2026/2027 vereinheitlicht, Bonus-Card-Klasse, format.html CTA zweiter Button, HR Wordmark (Commit `a4c9dc9`)
+- [x] CEO Quality Pass IV (kritische Befunde): Navbar-Brand auf allen 4 Seiten von `Racing Cup 2026` auf `Firmen Racing Cup 2026/2027` korrigiert (war die einzige permanent sichtbare, aber veraltete/gekürzte Markenbezeichnung) + responsive Grössenreduktion (`.navbar-brand` bei ≤768px), da der längere Text sonst auf schmalen Mobilgeräten hätte umbrechen können; Emoji + Inline-Style im Countdown-„Event läuft"-Fallback entfernt (`js/main.js`, neue Klasse `.countdown-live-note`); Hero-Bild `header-pre-event.png` (4.85 MB, ungenutzter Alphakanal) als `header-pre-event.jpg` neu exportiert (Qualität 82, ~0.48 MB, –90%) und PNG entfernt — deutlich schnellerer Hero-Ladevorgang
 
 ---
 

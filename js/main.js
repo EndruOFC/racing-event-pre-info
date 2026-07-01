@@ -69,10 +69,8 @@ function initCountdown() {
 
     if (diff <= 0) {
       wrapper.innerHTML = `
-        <div class="countdown-label">🏁 Der Season Opener hat begonnen!</div>
-        <p style="color:var(--gelb);font-family:var(--font-head);font-size:1.1rem;letter-spacing:.1em;margin-top:.5rem">
-          Road to the Nordschleife
-        </p>`;
+        <div class="countdown-label">Der Season Opener hat begonnen!</div>
+        <p class="countdown-live-note">Road to the Nordschleife</p>`;
       return;
     }
 
