@@ -25,9 +25,9 @@ die ein Team anmelden oder sich über die Meisterschaft informieren wollen.
 
 | Event | Datum | Strecke | Kosten/Person |
 |-------|-------|---------|--------------|
-| Event 01 — Season Opener | Do. 20. August 2026 | Spielberg South Course | CHF 90.— |
-| Event 02 — Round 2 | Do. 17. September 2026 | Hockenheim / Brands Hatch | CHF 90.— |
-| Event 03 — Weather Challenge | Do. 15. Oktober 2026 | Nürburgring Sprint GT | CHF 90.— |
+| Event 01 — Season Opener | Do. 10. September 2026 | Spielberg South Course | CHF 90.— |
+| Event 02 — Round 2 | Do. 15. Oktober 2026 | Hockenheim / Brands Hatch | CHF 90.— |
+| Event 03 — Weather Challenge | Do. 19. November 2026 | Nürburgring Sprint GT | CHF 90.— |
 | Grand Finale | Fr. 16. Januar 2027 | Nürburgring Nordschleife | CHF 180.— |
 
 - Alle Events bei **Hybrid Racing Au SG**, Start jeweils ab **19:00 Uhr**
@@ -121,9 +121,9 @@ Kein serverseitiges Datenmodell – alles ist statischer HTML-Content.
 ### Saison-Struktur (hardcoded in format.html + index.html)
 ```
 4 Events — alle bei Hybrid Racing Au SG, ab 19:00 Uhr:
-├── Event 01 – Season Opener    | Do. 20. Aug. 2026 | Spielberg South Course      | 20' T + 10' Q + 60' R
-├── Event 02 – Round 2          | Do. 17. Sep. 2026 | Hockenheim / Brands Hatch   | 20' T + 10' Q + 60' R
-├── Event 03 – Weather Challenge| Do. 15. Okt. 2026 | Nürburgring Sprint GT       | 20' T + 10' Q + 90' R
+├── Event 01 – Season Opener    | Do. 10. Sep. 2026 | Spielberg South Course      | 20' T + 10' Q + 60' R
+├── Event 02 – Round 2          | Do. 15. Okt. 2026 | Hockenheim / Brands Hatch   | 20' T + 10' Q + 60' R
+├── Event 03 – Weather Challenge| Do. 19. Nov. 2026 | Nürburgring Sprint GT       | 20' T + 10' Q + 90' R
 └── Grand Finale                | Fr. 16. Jan. 2027 | Nürburgring Nordschleife    | 30' T + 30' Q + 3h R · ×2 Punkte
 ```
 
@@ -145,7 +145,7 @@ Wertung: Teamwertung (2 Fahrer/Team), 8 Teams total
 
 ### Konfiguration (js/main.js)
 ```js
-CONFIG.SEASON_OPENER = '2026-08-20T19:00:00'  // Do. 20. August 2026
+CONFIG.SEASON_OPENER = '2026-09-10T19:00:00'  // Do. 10. September 2026
 ```
 
 ### Cross-Site-Links (hardcoded im HTML, nicht per JS)
@@ -185,6 +185,7 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
   HTML enthält zusätzlich statisches `.aktiv` als Fallback
 - **Navbar-Hintergrund** verdunkelt sich via JS-scroll-Listener (`rgba(10,10,10,.85)` → `.97`);
   kein CSS-only Shrink (Unterschied zu Racing-Event-Sing-In, das `.navbar--shrunk` nutzt)
+- **Anmeldeschluss-Badge** (Commit `6bef146`): `.deadline-badge` — rot hinterlegt (`rgba(220,38,38,.10)`), rote Border, `#fc8181` Text, Orbitron/Uppercase. Platziert in `index.html` unter Hero-CTAs und unter CTA-Block-Buttons. Zeigt „⚠ Anmeldeschluss: 31. August 2026".
 - **CEO Quality Pass** (Commit `6692d03`): Neue Utility-Klassen in `css/style.css` —
   `.cta-row`, `.hero-page`, `.total-card`, `.total-table`, `.includes-card`, `.includes-grid`,
   `.kosten-card--gold`, `.kosten-card--blau`, `.bonus-card--finale`, `.countdown-strip-note`, `.timeline-desc`
@@ -207,6 +208,7 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 | Season-Status Dot | `.season-status.upcoming::before` | index.html |
 | Footer Credits | `.footer-credits`, `.footer-credits a` | alle Seiten |
 | Section Padding Reducer | `.section--pt-sm` | kosten.html |
+| Anmeldeschluss-Badge | `.deadline-badge` | index.html (Hero + CTA-Block) |
 
 ---
 
@@ -260,7 +262,7 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 
 ### Erledigt
 - [x] Preise eingetragen: CHF 90.— (normale Events) / CHF 180.— (Grand Finale)
-- [x] Season-Opener-Datum gesetzt: `2026-08-20T19:00:00` (Do. 20. August 2026)
+- [x] Season-Opener-Datum gesetzt: `2026-09-10T19:00:00` (Do. 10. September 2026)
 - [x] Alle Event-Termine in Timeline, Season-Grid und FAQ befüllt und konsistent
 - [x] `aria-expanded` in FAQ-Buttons dynamisch korrekt gesetzt
 - [x] README.md auf aktuellen Stand gebracht
@@ -274,11 +276,11 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 
 ---
 
-## Aktueller Branch-Status (Stand 2026-06-30)
+## Aktueller Branch-Status (Stand 2026-07-01)
 
 - `main`: Stabil und aktuell. Keine offenen Feature-Branches.
+  - `6bef146`: Update: Eventdaten Sep/Okt/Nov 2026 + Finale Jan 2027 + Anmeldeschluss 31.08
   - `a4c9dc9`: Fix: CEO Quality Pass III — Lesbarkeit, Konsistenz, Markennamen
   - `a7eddc8`: Design: CEO Quality Pass II — Emojis, Placeholder, Daten, Inline-Styles bereinigt
   - `023ba60`: Docs: CLAUDE.md Branch-Status + Fliesstext-Entscheidung aktualisiert
   - `86fb076`: Fix: Fliesstext-Farbe grau zu weiss (17 CSS-Klassen)
-  - `dc8dece`: Docs: README.md Ordnerstruktur um header-pre-event.png ergänzt
