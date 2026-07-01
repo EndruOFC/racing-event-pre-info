@@ -278,11 +278,22 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 
 ---
 
-## Aktueller Branch-Status (Stand 2026-07-01)
+## Aktueller Branch-Status (Stand 2026-07-02)
 
-- `main`: Stabil und aktuell. Keine offenen Feature-Branches.
+- `main`: Stabil und aktuell. Keine lokalen Änderungen in diesem Repo, keine offenen Feature-Branches.
+  - `f0a3499`: Fix: CEO Quality Pass IV — Navbar-Brand, Countdown-Emoji, Hero-Bild komprimiert
+  - `c7a3cd8`: Docs: CLAUDE.md Eventdaten Sep/Okt/Nov 2026 aktualisiert
   - `6bef146`: Update: Eventdaten Sep/Okt/Nov 2026 + Finale Jan 2027 + Anmeldeschluss 31.08
   - `a4c9dc9`: Fix: CEO Quality Pass III — Lesbarkeit, Konsistenz, Markennamen
   - `a7eddc8`: Design: CEO Quality Pass II — Emojis, Placeholder, Daten, Inline-Styles bereinigt
   - `023ba60`: Docs: CLAUDE.md Branch-Status + Fliesstext-Entscheidung aktualisiert
   - `86fb076`: Fix: Fliesstext-Farbe grau zu weiss (17 CSS-Klassen)
+
+**Cross-Repo-Kontext (Stand 2026-07-02):** In den beiden Schwester-Repos wurden im Rahmen eines
+Cross-Repo-CEO-Quality-Passes lokale, noch nicht committete Fixes vorgenommen (ausgehend von
+diesem Repo als Referenz-Standard für Markenname/Emoji-Policy):
+
+- `Racing-Event-Sing-In`: Falsche Event-Termine in `closed.html`/`confirmation.html` korrigiert (wichen von `js/config.js` ab), Navbar-Brand + Titel/OG-Tags auf „Firmen Racing Cup 2026/2027" vereinheitlicht (war „Racing Cup 2026"), alle Pictogramm-Emojis entfernt (Favicon jetzt „R"-Buchstabe wie in diesem Repo).
+- `firmen-racing-cup-2026`: Footer aller 4 Seiten um `.footer-links` mit Rückverlinkung zu dieser Info-Site und zum Anmeldeportal ergänzt (fehlte bisher komplett).
+
+Dieses Repo selbst war bereits vor dem Pass der konsistenteste der drei und diente als Vorbild (voller Markenname, keine Emojis, Footer-Cross-Links bereits vorhanden).
