@@ -1526,6 +1526,23 @@ footer::before {
   .countdown-strip-note { text-align: center; width: 100%; }
 }
 
+/* Anmeldeschluss-Badge — rot, nah am CTA */
+.deadline-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  margin-top: .9rem;
+  padding: .3rem .85rem;
+  background: rgba(220, 38, 38, .10);
+  border: 1px solid rgba(220, 38, 38, .45);
+  border-radius: 4px;
+  color: #fc8181;
+  font-family: var(--font-head);
+  font-size: .72rem;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
 /* Timeline card description paragraph */
 .timeline-desc {
   color: var(--color-text);
