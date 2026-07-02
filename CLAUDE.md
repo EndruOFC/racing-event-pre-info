@@ -253,7 +253,7 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 
 ---
 
-## Offene Punkte (Stand 2026-06-30)
+## Offene Punkte (Stand 2026-07-02)
 
 ### Hoch
 - [ ] Open-Graph-Meta-Tags auf **allen** Seiten (`index.html` vollständig inkl. `og:image` + width/height; Unterseiten `format`/`kosten`/`faq` noch ohne OG)
@@ -286,14 +286,15 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 
 ## Aktueller Branch-Status (Stand 2026-07-02)
 
-- `main`: Aktualisiert am 2026-07-02 — zuletzt: Footer vereinheitlicht (Sponsor-Logos + 5 Textzonen, `.footer-title`→`.footer-presented`, Gradient via `border-image`), `og:image` (+ width/height) auf `index.html`, totes `.company-wordmark`-CSS entfernt. Davor: Anmeldeschluss-Badge 31.07.2026, Cross-Site-Links `target="_blank" rel="noopener"`, `loading="lazy"`, `preconnect` für Google Fonts, OG-Basis-Tags, Hybrid-Racing-Logo (`logos/hybracing.png`) in Footer + Company-Card. Keine offenen Feature-Branches.
+- `main`: Aktualisiert am 2026-07-02 — zuletzt: Docs CLAUDE.md + README.md finaler Stand, Footer vereinheitlicht (Sponsor-Logos + 5 Textzonen, `.footer-title`→`.footer-presented`, Gradient via `border-image`), `og:image` (+ width/height) auf `index.html`, totes `.company-wordmark`-CSS entfernt. Davor: Hybrid-Racing-Logo in Footer + Company-Card, Anmeldeschluss-Badge 31.07.2026, Cross-Site-Links `target="_blank" rel="noopener"`, `loading="lazy"`, `preconnect`+`display=swap` für Google Fonts, OG-Tags. Keine offenen Feature-Branches.
+  - `cb6898b`: Docs: CLAUDE.md + README.md aktualisiert — finaler Stand nach technischer Prüfung
+  - `bc76af7`: Feature: og:image + Footer vereinheitlicht (5 Zonen) + totes CSS .company-wordmark entfernt
+  - `af352d2`: Feature: Hybrid Racing Logo + Link integriert
+  - `1ffe81e`: Fix & Docs: Anmeldeschluss 31.07, target/_blank, lazy-loading, preconnect, OG-Tags, README aktuell
+  - `6be7ac4`: Docs: CLAUDE.md Branch-Status aktualisiert + Cross-Repo-Kontext dokumentiert
   - `f0a3499`: Fix: CEO Quality Pass IV — Navbar-Brand, Countdown-Emoji, Hero-Bild komprimiert
-  - `c7a3cd8`: Docs: CLAUDE.md Eventdaten Sep/Okt/Nov 2026 aktualisiert
-  - `6bef146`: Update: Eventdaten Sep/Okt/Nov 2026 + Finale Jan 2027 + Anmeldeschluss 31.08
   - `a4c9dc9`: Fix: CEO Quality Pass III — Lesbarkeit, Konsistenz, Markennamen
   - `a7eddc8`: Design: CEO Quality Pass II — Emojis, Placeholder, Daten, Inline-Styles bereinigt
-  - `023ba60`: Docs: CLAUDE.md Branch-Status + Fliesstext-Entscheidung aktualisiert
-  - `86fb076`: Fix: Fliesstext-Farbe grau zu weiss (17 CSS-Klassen)
 
 **Cross-Repo-Kontext (Stand 2026-07-02):** In den beiden Schwester-Repos wurden im Rahmen eines
 Cross-Repo-CEO-Quality-Passes lokale, noch nicht committete Fixes vorgenommen (ausgehend von
