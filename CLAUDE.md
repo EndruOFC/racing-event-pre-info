@@ -190,10 +190,11 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 - **CEO Quality Pass** (Commit `6692d03`): Neue Utility-Klassen in `css/style.css` —
   `.cta-row`, `.hero-page`, `.total-card`, `.total-table`, `.includes-card`, `.includes-grid`,
   `.kosten-card--gold`, `.kosten-card--blau`, `.bonus-card--finale`, `.countdown-strip-note`, `.timeline-desc`
-- **Footer-Struktur** (identisch zu allen 3 Repos): Gradient-Trennlinie (Blau→Gelb→Blau) via `footer::before`; `.footer-presented` + `.footer-powered` in `#F5F5F5`; `.footer-credits` „Website & Digital Infrastructure by Endrulabs.ch" (#888888, Hover #FFD100); `.footer-copy` „© 2026/2027 Firmen Racing Cup · All Rights Reserved" (#666666). `.footer-tagline` (alt) vollständig entfernt.
+- **Footer-Struktur** (Stand 2026-07-02, einheitlich in allen 3 Repos): Sponsor-Logo-Reihe (`.footer-logos` — Lässer + Menzi Muck) + **5 Textzonen** in fester Reihenfolge — `.footer-presented` (Presented by …) · `.footer-powered` (Powered by + Hybrid-Racing-Logo `.logo-hybracing`, verlinkt auf hybracing.ch) · `.footer-credits` (Voll-Link „Website & Digital Infrastructure by Endrulabs.ch") · `.footer-links` (interne Seiten + Cross-Repo-Links) · `.footer-copy` („© 2026/2027 …"). Gradient-Trennlinie jetzt via `border-image: linear-gradient(to right,#FFD100,#003087)` auf `footer` — altes `footer::before` per `content:none` deaktiviert. `.footer-title` (alt) → `.footer-presented` umbenannt.
 - **Cross-Site-Links `target="_blank" rel="noopener"`** (Stand 2026-07-02): Alle Links zu den Schwester-Repos (`Racing-Event-Sing-In`, `firmen-racing-cup-2026`) in Navbar, Footer, CTA-Buttons und FAQ-Inline-Links öffnen in neuem Tab mit `rel="noopener"`; interne `.html`-Links bleiben bewusst ohne `target`.
 - **Performance** (Stand 2026-07-02): `loading="lazy"` auf allen Below-the-fold-Bildern (Company-Card- + Footer-Logos); Hero-Bilder ausgenommen. `preconnect` zu `fonts.googleapis.com`/`fonts.gstatic.com` in allen 4 `<head>`s vor dem Stylesheet-`<link>` (beschleunigt den Google-Fonts-`@import` in `style.css`).
-- **Open-Graph-Tags** (Stand 2026-07-02): `og:type`/`og:title`/`og:description`/`og:url` auf `index.html` ergänzt (`og:image` weiterhin offen).
+- **Open-Graph-Tags** (Stand 2026-07-02): `og:type`/`og:title`/`og:description`/`og:url` + **`og:image`** (Hero `assets/header-pre-event.jpg`) inkl. `og:image:width`/`og:image:height` (1200×630 nominal — reales Bild kann abweichen) auf `index.html`.
+- **Totes CSS entfernt** (Stand 2026-07-02): ungenutzter `.company-wordmark`-Block aus `css/style.css` gelöscht — war nach der Hybrid-Logo-Integration in keiner HTML-Datei mehr referenziert.
 
 ---
 
@@ -255,7 +256,7 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 ## Offene Punkte (Stand 2026-06-30)
 
 ### Hoch
-- [ ] Open-Graph-Meta-Tags auf **allen** Seiten (`og:type`/`og:title`/`og:description`/`og:url` bereits auf `index.html` gesetzt; restliche Seiten + `og:image` offen)
+- [ ] Open-Graph-Meta-Tags auf **allen** Seiten (`index.html` vollständig inkl. `og:image` + width/height; Unterseiten `format`/`kosten`/`faq` noch ohne OG)
 - [ ] CNAME-Datei committen (Custom Domain `info.racing-cup-2026.ch`)
 
 ### Niedrig
@@ -285,7 +286,7 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 
 ## Aktueller Branch-Status (Stand 2026-07-02)
 
-- `main`: Aktualisiert am 2026-07-02 — Anmeldeschluss-Badge auf 31.07.2026 (konsistent mit Anmeldeportal), Cross-Site-Links `target="_blank" rel="noopener"`, `loading="lazy"` (Below-the-fold), `preconnect` für Google Fonts, OG-Tags auf `index.html`, Hybrid-Racing-Logo (`logos/hybracing.png`) in Footer + Company-Card mit `.logo-hybracing`-CSS, README aktualisiert. Keine offenen Feature-Branches.
+- `main`: Aktualisiert am 2026-07-02 — zuletzt: Footer vereinheitlicht (Sponsor-Logos + 5 Textzonen, `.footer-title`→`.footer-presented`, Gradient via `border-image`), `og:image` (+ width/height) auf `index.html`, totes `.company-wordmark`-CSS entfernt. Davor: Anmeldeschluss-Badge 31.07.2026, Cross-Site-Links `target="_blank" rel="noopener"`, `loading="lazy"`, `preconnect` für Google Fonts, OG-Basis-Tags, Hybrid-Racing-Logo (`logos/hybracing.png`) in Footer + Company-Card. Keine offenen Feature-Branches.
   - `f0a3499`: Fix: CEO Quality Pass IV — Navbar-Brand, Countdown-Emoji, Hero-Bild komprimiert
   - `c7a3cd8`: Docs: CLAUDE.md Eventdaten Sep/Okt/Nov 2026 aktualisiert
   - `6bef146`: Update: Eventdaten Sep/Okt/Nov 2026 + Finale Jan 2027 + Anmeldeschluss 31.08
