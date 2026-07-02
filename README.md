@@ -37,7 +37,8 @@ Alle Events bei **Hybrid Racing Au SG**, Start jeweils ab 19:00 Uhr.
 │   └── porsche-silhouette.svg
 └── logos/
     ├── LAESSER-Logo_CMYK.png
-    └── menzimuck.png
+    ├── menzimuck.png
+    └── hybracing.png       ← Hybrid Racing Logo (Footer + Company-Card)
 ```
 
 ---
@@ -85,6 +86,7 @@ Alle Events bei **Hybrid Racing Au SG**, Start jeweils ab 19:00 Uhr.
 - Alle 4 Seiten fertig; Eventdaten & Preise definitiv.
 - **Anmeldeschluss: 31. Juli 2026**; Countdown zielt auf den Season Opener (Do. 10. September 2026, 19:00 Uhr).
 - Cross-Site-Links mit `target="_blank" rel="noopener"`; Below-the-fold-Bilder `loading="lazy"`; `preconnect` für Google Fonts; OG-Tags (`og:type`/`og:title`/`og:description`/`og:url`) auf `index.html`.
+- Hybrid-Racing-Logo (`logos/hybracing.png`) im Footer aller Seiten und in der 3. Company-Card (verlinkt auf hybracing.ch).
 - Offen: `og:image`, CNAME-Datei committen, Favicon als echte Datei.
 
 ---

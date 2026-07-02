@@ -57,7 +57,7 @@ Fonts: **Orbitron** (Headlines, monospace Motorsport-Font) · **Rajdhani** (Body
 Beide via Google Fonts CDN geladen.
 
 Logo-Besonderheit: `menzimuck.png` ist weiss/rot auf transparent → kein CSS-Filter nötig.
-Hybrid Racing hat kein Logo-Asset → `.company-initials` mit "HR" als Platzhalter.
+Hybrid Racing hat jetzt ein Logo-Asset: `logos/hybracing.png` (oranges „H"-Racing-Symbol auf Dunkel) — ersetzt den früheren `.company-wordmark`-Textplatzhalter.
 
 ---
 
@@ -172,7 +172,7 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 - **Fliesstext-Farbe weiss** — alle Beschreibungs- und Body-Texte (`--color-text`) statt grau (`--color-text-muted`). Grau bleibt nur für UI-Elemente: Nav-Links, Countdown-Labels, Badges, Buttons, Footer-Nav (Commit `86fb076`)
 - **Menzi-Muck-Logo** neues PNG (weiss/rot auf transparent) — CSS-Filter `invert()` entfernt (war Workaround für altes schwarz/rotes Logo)
 - **Keine Emojis in UI** — Rule-Cards: nummerische Icons `01`–`06` (Orbitron/Gelb); Kosten-Cards: `E.01`–`E.03` / `GF`; Hinweis-Icons: `▸` (Typografie-Zeichen). Emojis wirkten Gaming-assoziiert, nicht corporate (Commit `a7eddc8`)
-- **Hybrid Racing Logo** — kein Logo-Asset vorhanden; `.company-wordmark` (Orbitron-Text in blauer Border-Box) als Platzhalter; ersetzt früheres `.company-initials "HR"` (Commit `a4c9dc9`)
+- **Hybrid Racing Logo** (Stand 2026-07-02): echtes Logo `logos/hybracing.png` integriert — ersetzt den `.company-wordmark`-Textplatzhalter in der 3. Company-Card (`index.html`, verlinkt auf `https://hybracing.ch/`) und erscheint im Footer aller Seiten neben „Powered by Hybrid Racing Au SG". Styling via neuer Klasse `.logo-hybracing` (28px, `opacity` .85 → 1 bei Hover). Historie: vorher `.company-wordmark` (Orbitron-Text in blauer Border-Box), noch früher `.company-initials "HR"` (Commit `a4c9dc9`).
 - **Sub-Page-Hero** — alle 3 Sub-Pages (`format.html`, `kosten.html`, `faq.html`) verwenden `class="hero hero-page"`; `.hero-page` definiert `min-height: 56vh` + Padding (vormals 44vh, erhöht für mehr Präsenz)
 - **CEO Quality Pass III** (Commit `a4c9dc9`): Lesbarkeit und Konsistenz — `.tag-datum`, `.points-table td`, `.total-table td`, `.countdown-strip .countdown-label` von `--color-text-muted` auf `--color-text` (weiss); Titel-Tags aller Seiten auf „2026/2027" vereinheitlicht; Bonus-Card Inline-Styles durch `.bonus-card--finale` ersetzt; `format.html` CTA zweiten Button ergänzt
 - **Timeline Finale** — Nummernkreis zeigt `GF` statt `F` (klarer, kein Buchstaben-Placeholder-Look)
@@ -213,6 +213,7 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 | Footer Credits | `.footer-credits`, `.footer-credits a` | alle Seiten |
 | Section Padding Reducer | `.section--pt-sm` | kosten.html |
 | Anmeldeschluss-Badge | `.deadline-badge` | index.html (Hero + CTA-Block) |
+| Hybrid-Racing-Logo | `.logo-hybracing` | Footer (alle Seiten) + Company-Card (index.html) |
 
 ---
 
@@ -223,6 +224,7 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 | `logos/LAESSER-Logo_CMYK.png` | PNG (weiß auf transparent) | Hero, Partner-Bereich, Footer – kein Filter nötig |
 | `logos/LAESSER-Logo_RGB.png` | PNG (weiß auf transparent) | Derzeit ungenutzt (Reserve) |
 | `logos/menzimuck.png` | PNG (weiss/rot auf transparent) | Überall – kein Filter nötig |
+| `logos/hybracing.png` | PNG (orange auf dunkel) | Hybrid Racing Logo — Footer (`.logo-hybracing`) + 3. Company-Card auf `index.html`; verlinkt auf hybracing.ch |
 | `assets/header-pre-event.jpg` | JPEG | Hero-Hintergrundbild auf `index.html` (optimiert, ~0.48 MB) |
 | `assets/porsche-silhouette.svg` | SVG (`currentColor`) | Hero-Overlay als `.hero-car` (opacity via CSS) |
 
@@ -257,7 +259,7 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 - [ ] CNAME-Datei committen (Custom Domain `info.racing-cup-2026.ch`)
 
 ### Niedrig
-- [ ] Hybrid Racing: echtes Logo-Asset besorgen → ersetzt `.company-wordmark`-Platzhalter
+- [x] Hybrid Racing: echtes Logo-Asset `logos/hybracing.png` integriert (Footer + Company-Card, Stand 2026-07-02) — ersetzt `.company-wordmark`-Platzhalter
 - [ ] Impressum / Datenschutzerklärung (Schweizer DSG / nDSG)
 - [ ] Favicon als echte `.ico`/`.png`-Datei (aktuell nur `data:URI` inline SVG)
 - [ ] 404-Seite für GitHub Pages (`404.html`)
@@ -283,7 +285,7 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 
 ## Aktueller Branch-Status (Stand 2026-07-02)
 
-- `main`: Aktualisiert am 2026-07-02 — Anmeldeschluss-Badge auf 31.07.2026 (konsistent mit Anmeldeportal), Cross-Site-Links `target="_blank" rel="noopener"`, `loading="lazy"` (Below-the-fold), `preconnect` für Google Fonts, OG-Tags auf `index.html`, README aktualisiert. Keine offenen Feature-Branches.
+- `main`: Aktualisiert am 2026-07-02 — Anmeldeschluss-Badge auf 31.07.2026 (konsistent mit Anmeldeportal), Cross-Site-Links `target="_blank" rel="noopener"`, `loading="lazy"` (Below-the-fold), `preconnect` für Google Fonts, OG-Tags auf `index.html`, Hybrid-Racing-Logo (`logos/hybracing.png`) in Footer + Company-Card mit `.logo-hybracing`-CSS, README aktualisiert. Keine offenen Feature-Branches.
   - `f0a3499`: Fix: CEO Quality Pass IV — Navbar-Brand, Countdown-Emoji, Hero-Bild komprimiert
   - `c7a3cd8`: Docs: CLAUDE.md Eventdaten Sep/Okt/Nov 2026 aktualisiert
   - `6bef146`: Update: Eventdaten Sep/Okt/Nov 2026 + Finale Jan 2027 + Anmeldeschluss 31.08
