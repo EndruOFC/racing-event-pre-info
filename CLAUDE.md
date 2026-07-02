@@ -1,5 +1,36 @@
 # Firmen Racing Cup 2026/2027 — Projektüberblick (CLAUDE.md)
 
+## Arbeitsweise (Vibe Coding Workflow)
+
+### Grundsätze
+
+- Keine unnötige Komplexität
+- Keine Annahmen wenn Informationen fehlen — zuerst nachfragen
+- Zuerst vorhandene Projektdateien lesen
+- Markdown-Dateien sind die Wahrheit
+- Wichtige Entscheidungen dokumentieren
+- Kurz, klar und schrittweise arbeiten
+- Keine neuen Tools, Frameworks oder Dependencies ohne Begründung
+
+### Vor jeder Aufgabe
+
+- README.md und CLAUDE.md lesen
+- Bestehende Projektstruktur verstehen
+- Bei fehlenden Informationen: nachfragen
+
+### Commits
+
+- Kein Commit ohne explizite Freigabe
+- Kein Auto-Fix ohne Analyse zuerst
+- Ein Prompt = eine Aufgabe
+
+### Projekt-Kontext
+
+- Static Site — kein Backend, kein Build-Step
+- Hosting: GitHub Pages (main branch)
+- Workflow: Vibe Coding — kein manuelles Coding
+- Haupt-Tool: Claude Code Desktop App
+
 ## Projektziel
 
 Öffentliche Info-Website für den **Firmen Racing Cup 2026/2027** – ein Sim-Racing-Event bei
