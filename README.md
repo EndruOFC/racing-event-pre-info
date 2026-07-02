@@ -16,6 +16,8 @@ Presented by **Lässer Stickmaschinen** & **Menzi Muck AG** | Hosted at **Hybrid
 
 Alle Events bei **Hybrid Racing Au SG**, Start jeweils ab 19:00 Uhr.
 
+**Anmeldeschluss: 31. Juli 2026** — Anmeldung über das Anmeldeportal (siehe „Verwandte Apps").
+
 ---
 
 ## Struktur
@@ -75,6 +77,15 @@ Alle Events bei **Hybrid Racing Au SG**, Start jeweils ab 19:00 Uhr.
 | Info-Site (diese) | racing-event-pre-info | EndruOFC.github.io/racing-event-pre-info |
 | Anmeldeportal | Racing-Event-Sing-In | EndruOFC.github.io/Racing-Event-Sing-In/ |
 | Rangliste | firmen-racing-cup-2026 | EndruOFC.github.io/firmen-racing-cup-2026/standings.html |
+
+---
+
+## Stand der Implementierung (2026-07-02)
+
+- Alle 4 Seiten fertig; Eventdaten & Preise definitiv.
+- **Anmeldeschluss: 31. Juli 2026**; Countdown zielt auf den Season Opener (Do. 10. September 2026, 19:00 Uhr).
+- Cross-Site-Links mit `target="_blank" rel="noopener"`; Below-the-fold-Bilder `loading="lazy"`; `preconnect` für Google Fonts; OG-Tags (`og:type`/`og:title`/`og:description`/`og:url`) auf `index.html`.
+- Offen: `og:image`, CNAME-Datei committen, Favicon als echte Datei.
 
 ---
 

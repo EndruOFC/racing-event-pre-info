@@ -185,12 +185,15 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
   HTML enthält zusätzlich statisches `.aktiv` als Fallback
 - **Navbar-Hintergrund** verdunkelt sich via JS-scroll-Listener (`rgba(10,10,10,.85)` → `.97`);
   kein CSS-only Shrink (Unterschied zu Racing-Event-Sing-In, das `.navbar--shrunk` nutzt)
-- **Anmeldeschluss-Badge** (Commit `6bef146`): `.deadline-badge` — rot hinterlegt (`rgba(220,38,38,.10)`), rote Border, `#fc8181` Text, Orbitron/Uppercase. Platziert in `index.html` unter Hero-CTAs und unter CTA-Block-Buttons. Zeigt „⚠ Anmeldeschluss: 31. August 2026".
+- **Anmeldeschluss-Badge** (Commit `6bef146`): `.deadline-badge` — rot hinterlegt (`rgba(220,38,38,.10)`), rote Border, `#fc8181` Text, Orbitron/Uppercase. Platziert in `index.html` unter Hero-CTAs und unter CTA-Block-Buttons. Zeigt „⚠ Anmeldeschluss: 31. Juli 2026" (Stand 2026-07-02 von 31.08. auf 31.07.2026 vorgezogen — konsistent mit `CONFIG.ANMELDEFRIST` im Anmeldeportal `Racing-Event-Sing-In`).
 - **Navbar-Brand**: `Firmen Racing Cup 2026/2027` (nicht gekürzt) auf allen 4 Seiten — Corporate-Identity-Anforderung, analog zum Schwester-Repo `firmen-racing-cup-2026`. Bei ≤768px reduziert `.navbar-brand` auf `.6rem`/`.1em` Letter-Spacing, damit der volle Markenname auf schmalen Mobilgeräten nicht umbricht.
 - **CEO Quality Pass** (Commit `6692d03`): Neue Utility-Klassen in `css/style.css` —
   `.cta-row`, `.hero-page`, `.total-card`, `.total-table`, `.includes-card`, `.includes-grid`,
   `.kosten-card--gold`, `.kosten-card--blau`, `.bonus-card--finale`, `.countdown-strip-note`, `.timeline-desc`
 - **Footer-Struktur** (identisch zu allen 3 Repos): Gradient-Trennlinie (Blau→Gelb→Blau) via `footer::before`; `.footer-presented` + `.footer-powered` in `#F5F5F5`; `.footer-credits` „Website & Digital Infrastructure by Endrulabs.ch" (#888888, Hover #FFD100); `.footer-copy` „© 2026/2027 Firmen Racing Cup · All Rights Reserved" (#666666). `.footer-tagline` (alt) vollständig entfernt.
+- **Cross-Site-Links `target="_blank" rel="noopener"`** (Stand 2026-07-02): Alle Links zu den Schwester-Repos (`Racing-Event-Sing-In`, `firmen-racing-cup-2026`) in Navbar, Footer, CTA-Buttons und FAQ-Inline-Links öffnen in neuem Tab mit `rel="noopener"`; interne `.html`-Links bleiben bewusst ohne `target`.
+- **Performance** (Stand 2026-07-02): `loading="lazy"` auf allen Below-the-fold-Bildern (Company-Card- + Footer-Logos); Hero-Bilder ausgenommen. `preconnect` zu `fonts.googleapis.com`/`fonts.gstatic.com` in allen 4 `<head>`s vor dem Stylesheet-`<link>` (beschleunigt den Google-Fonts-`@import` in `style.css`).
+- **Open-Graph-Tags** (Stand 2026-07-02): `og:type`/`og:title`/`og:description`/`og:url` auf `index.html` ergänzt (`og:image` weiterhin offen).
 
 ---
 
@@ -250,7 +253,7 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 ## Offene Punkte (Stand 2026-06-30)
 
 ### Hoch
-- [ ] Open-Graph-Meta-Tags auf allen Seiten (`og:title`, `og:description`, `og:image`)
+- [ ] Open-Graph-Meta-Tags auf **allen** Seiten (`og:type`/`og:title`/`og:description`/`og:url` bereits auf `index.html` gesetzt; restliche Seiten + `og:image` offen)
 - [ ] CNAME-Datei committen (Custom Domain `info.racing-cup-2026.ch`)
 
 ### Niedrig
@@ -280,7 +283,7 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 
 ## Aktueller Branch-Status (Stand 2026-07-02)
 
-- `main`: Stabil und aktuell. Keine lokalen Änderungen in diesem Repo, keine offenen Feature-Branches.
+- `main`: Aktualisiert am 2026-07-02 — Anmeldeschluss-Badge auf 31.07.2026 (konsistent mit Anmeldeportal), Cross-Site-Links `target="_blank" rel="noopener"`, `loading="lazy"` (Below-the-fold), `preconnect` für Google Fonts, OG-Tags auf `index.html`, README aktualisiert. Keine offenen Feature-Branches.
   - `f0a3499`: Fix: CEO Quality Pass IV — Navbar-Brand, Countdown-Emoji, Hero-Bild komprimiert
   - `c7a3cd8`: Docs: CLAUDE.md Eventdaten Sep/Okt/Nov 2026 aktualisiert
   - `6bef146`: Update: Eventdaten Sep/Okt/Nov 2026 + Finale Jan 2027 + Anmeldeschluss 31.08
