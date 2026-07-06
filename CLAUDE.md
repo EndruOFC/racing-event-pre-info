@@ -102,7 +102,7 @@ Hybrid Racing hat jetzt ein Logo-Asset: `logos/hybracing.png` (oranges „H"-Rac
 - **Assets** – SVG-Silhouette in `assets/`, Logos (PNG) in `logos/`
 - **Hero-Bild** – lokales Asset `assets/header-pre-event.jpg` im `style`-Attribut von `#heroBg`
 - **Deployment** – GitHub Pages, Branch `main`, Root `/`
-- **Favicon** – Inline `data:URI` SVG (kein eigenes Favicon-File)
+- **Favicon** – Inline `data:URI` SVG (kein eigenes Favicon-File); **einheitlich „R"-SVG auf allen 4 Seiten** (Stand 2026-07-02 — die Unterseiten `format`/`kosten`/`faq` trugen vorher versehentlich ein Karo-Flaggen-SVG)
 
 ---
 
@@ -226,6 +226,7 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 - **Performance** (Stand 2026-07-02): `loading="lazy"` auf allen Below-the-fold-Bildern (Company-Card- + Footer-Logos); Hero-Bilder ausgenommen. `preconnect` zu `fonts.googleapis.com`/`fonts.gstatic.com` in allen 4 `<head>`s vor dem Stylesheet-`<link>` (beschleunigt den Google-Fonts-`@import` in `style.css`).
 - **Open-Graph-Tags** (Stand 2026-07-02): `og:type`/`og:title`/`og:description`/`og:url` + **`og:image`** (Hero `assets/header-pre-event.jpg`) inkl. `og:image:width`/`og:image:height` (1200×630 nominal — reales Bild kann abweichen) auf `index.html`.
 - **Totes CSS entfernt** (Stand 2026-07-02): ungenutzter `.company-wordmark`-Block aus `css/style.css` gelöscht — war nach der Hybrid-Logo-Integration in keiner HTML-Datei mehr referenziert.
+- **CEO Quality Pass V** (Stand 2026-07-02): (1) **Favicon** der Unterseiten `format`/`kosten`/`faq` von der Karo-Flagge auf das „R"-SVG von `index.html` vereinheitlicht — Browser-Tab-Icon jetzt seitenübergreifend identisch. (2) **`.section-heading`** von `clamp(1rem, 2.5vw, 1.5rem)` (max 24px) auf `clamp(1.4rem, 3vw, 2.1rem)` (max ~34px) vergrössert — stärkere Typo-Hierarchie zum 48px-Hero-Titel. (3) **`.btn-outline`** Ruhezustand-Textfarbe von `--color-text-muted` (#888) auf `--color-text` (weiss) — wirkt neben dem gelben Primär-Button nicht mehr „inaktiv"; Hover bleibt gelb (`--color-primary`).
 
 ---
 
@@ -317,7 +318,7 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 
 ## Aktueller Branch-Status (Stand 2026-07-02)
 
-- `main`: Aktualisiert am 2026-07-02 — zuletzt: Docs CLAUDE.md + README.md finaler Stand, Footer vereinheitlicht (Sponsor-Logos + 5 Textzonen, `.footer-title`→`.footer-presented`, Gradient via `border-image`), `og:image` (+ width/height) auf `index.html`, totes `.company-wordmark`-CSS entfernt. Davor: Hybrid-Racing-Logo in Footer + Company-Card, Anmeldeschluss-Badge 31.07.2026, Cross-Site-Links `target="_blank" rel="noopener"`, `loading="lazy"`, `preconnect`+`display=swap` für Google Fonts, OG-Tags. Keine offenen Feature-Branches.
+- `main`: Aktualisiert am 2026-07-02 — zuletzt: CEO Quality Pass V (Favicon Unterseiten → „R"-SVG, `.section-heading` grösser, `.btn-outline` Ruhezustand weiss). Davor: Docs finaler Stand, Footer vereinheitlicht (Sponsor-Logos + 5 Textzonen, `.footer-title`→`.footer-presented`, Gradient via `border-image`), `og:image` (+ width/height) auf `index.html`, totes `.company-wordmark`-CSS entfernt, Hybrid-Racing-Logo in Footer + Company-Card, Anmeldeschluss-Badge 31.07.2026, Cross-Site-Links `target="_blank" rel="noopener"`, `loading="lazy"`, `preconnect`+`display=swap` für Google Fonts, OG-Tags. Keine offenen Feature-Branches.
   - `cb6898b`: Docs: CLAUDE.md + README.md aktualisiert — finaler Stand nach technischer Prüfung
   - `bc76af7`: Feature: og:image + Footer vereinheitlicht (5 Zonen) + totes CSS .company-wordmark entfernt
   - `af352d2`: Feature: Hybrid Racing Logo + Link integriert
