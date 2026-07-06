@@ -195,7 +195,7 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 - **Hero `index.html` nutzt lokales Foto** – `assets/header-pre-event.png` direkt im `style`-Attribut
   von `#heroBg`. Ersetzt vorherige Unsplash-URL (Commit `19d50af`).
 - **Parallax auf index.html**: Inline-IIFE am Seitenende manipuliert `#heroBg.style.transform`
-  (nur Desktop ≥ 768 px). Nicht in `main.js` ausgelagert – bewusste Entscheidung für Inline-Scope.
+  (nur Desktop ≥ 768 px). Nicht in `main.js` ausgelagert – bewusste Entscheidung für Inline-Scope. Bewegungsfaktor `translateY(scrollY * 0.06)` — bewusst dezent, abgestimmt auf den kleinen `.hero-bg`-Puffer (`inset: -4%`), damit kein Bild-Zoom entsteht und beim Scrollen keine Ränder frei werden.
 - **Carbon-Fiber-Textur** via CSS `repeating-linear-gradient` (kein Bild-Asset) –
   nur auf Sub-Pages (`format.html`, `kosten.html`, `faq.html`) aktiv; `index.html` Hero hat Foto-Background
 - **Porsche-Silhouette** als `.hero-car` `<img>`-Tag (`assets/porsche-silhouette.svg`), positioniert
@@ -228,6 +228,7 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 - **Totes CSS entfernt** (Stand 2026-07-02): ungenutzter `.company-wordmark`-Block aus `css/style.css` gelöscht — war nach der Hybrid-Logo-Integration in keiner HTML-Datei mehr referenziert.
 - **CEO Quality Pass V** (Stand 2026-07-02): (1) **Favicon** der Unterseiten `format`/`kosten`/`faq` von der Karo-Flagge auf das „R"-SVG von `index.html` vereinheitlicht — Browser-Tab-Icon jetzt seitenübergreifend identisch. (2) **`.section-heading`** von `clamp(1rem, 2.5vw, 1.5rem)` (max 24px) auf `clamp(1.4rem, 3vw, 2.1rem)` (max ~34px) vergrössert — stärkere Typo-Hierarchie zum 48px-Hero-Titel. (3) **`.btn-outline`** Ruhezustand-Textfarbe von `--color-text-muted` (#888) auf `--color-text` (weiss) — wirkt neben dem gelben Primär-Button nicht mehr „inaktiv"; Hover bleibt gelb (`--color-primary`).
 - **Hero-Bild als PNG** (Stand 2026-07-06): `assets/header-pre-event.png` (1920×1080, ~835 KB) ersetzt die vorherige komprimierte JPG-Variante (~0.48 MB) — höhere Bildqualität (bewusste Qualität-über-Ladezeit-Entscheidung, ~75 % grösser; kehrt die JPG-Optimierung aus „CEO Quality Pass IV" um). Aktualisierte Referenzen: `#heroBg`-Background-Image (`index.html`) + `og:image` (jetzt 1920×1080). Alte `header-pre-event.jpg` gelöscht.
+- **Hero-Bild-Zoom behoben** (Stand 2026-07-06): `.hero-bg` hatte `inset: -20%` → mit `background-size: cover` wirkte das Bild ~1,4× gezoomt. Auf `inset: -4%` reduziert (~1,04×, praktisch unzoomed); der Parallax-Faktor entsprechend von `0.32` auf `0.06` verkleinert, damit der kleinere Puffer beim Scrollen nicht überfahren wird. `cover` bleibt (Vollbild, nur natürlicher 16:9-Beschnitt).
 
 ---
 
@@ -319,7 +320,7 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 
 ## Aktueller Branch-Status (Stand 2026-07-02)
 
-- `main`: Aktualisiert am 2026-07-06 — zuletzt: Hero-Bild durch höherwertiges PNG ersetzt (`assets/header-pre-event.png`, 1920×1080, ~835 KB; `#heroBg` + `og:image` nachgezogen, alte `.jpg` gelöscht). Davor (2026-07-02): CEO Quality Pass V (Favicon Unterseiten → „R"-SVG, `.section-heading` grösser, `.btn-outline` Ruhezustand weiss), Docs finaler Stand, Footer vereinheitlicht (Sponsor-Logos + 5 Textzonen, `.footer-title`→`.footer-presented`, Gradient via `border-image`), `og:image` (+ width/height) auf `index.html`, totes `.company-wordmark`-CSS entfernt, Hybrid-Racing-Logo in Footer + Company-Card, Anmeldeschluss-Badge 31.07.2026, Cross-Site-Links `target="_blank" rel="noopener"`, `loading="lazy"`, `preconnect`+`display=swap` für Google Fonts, OG-Tags. Keine offenen Feature-Branches.
+- `main`: Aktualisiert am 2026-07-06 — zuletzt: Hero-Bild-Zoom behoben (`.hero-bg` `inset` -20%→-4%, Parallax `0.32`→`0.06`). Davor: Hero-Bild durch höherwertiges PNG ersetzt (`assets/header-pre-event.png`, 1920×1080, ~835 KB; `#heroBg` + `og:image` nachgezogen, alte `.jpg` gelöscht). Davor (2026-07-02): CEO Quality Pass V (Favicon Unterseiten → „R"-SVG, `.section-heading` grösser, `.btn-outline` Ruhezustand weiss), Docs finaler Stand, Footer vereinheitlicht (Sponsor-Logos + 5 Textzonen, `.footer-title`→`.footer-presented`, Gradient via `border-image`), `og:image` (+ width/height) auf `index.html`, totes `.company-wordmark`-CSS entfernt, Hybrid-Racing-Logo in Footer + Company-Card, Anmeldeschluss-Badge 31.07.2026, Cross-Site-Links `target="_blank" rel="noopener"`, `loading="lazy"`, `preconnect`+`display=swap` für Google Fonts, OG-Tags. Keine offenen Feature-Branches.
   - `cb6898b`: Docs: CLAUDE.md + README.md aktualisiert — finaler Stand nach technischer Prüfung
   - `bc76af7`: Feature: og:image + Footer vereinheitlicht (5 Zonen) + totes CSS .company-wordmark entfernt
   - `af352d2`: Feature: Hybrid Racing Logo + Link integriert
