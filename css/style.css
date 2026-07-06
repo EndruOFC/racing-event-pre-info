@@ -378,7 +378,7 @@ a:focus-visible            { outline: 2px solid var(--color-primary); outline-of
 /* ── Section-Titel ─────────────────────────────────────────── */
 .section-heading {
   font-family: var(--font-display);
-  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  font-size: clamp(1.4rem, 3vw, 2.1rem);
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: .06em;
@@ -581,7 +581,7 @@ a:focus-visible            { outline: 2px solid var(--color-primary); outline-of
 .btn-outline {
   background: transparent;
   border-color: var(--color-border-subtle);
-  color: var(--color-text-muted);
+  color: var(--color-text);
 }
 .btn-outline:hover {
   border-color: var(--color-primary);
