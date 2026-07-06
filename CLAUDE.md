@@ -100,7 +100,7 @@ Hybrid Racing hat jetzt ein Logo-Asset: `logos/hybracing.png` (oranges „H"-Rac
 - **Parallax** – Inline `<script>` am Ende von `index.html` (außerhalb von `main.js`) via `translateY` auf `.hero-bg`
 - **Fonts** – Google Fonts CDN (Orbitron + Rajdhani)
 - **Assets** – SVG-Silhouette in `assets/`, Logos (PNG) in `logos/`
-- **Hero-Bild** – lokales Asset `assets/header-pre-event.png` (1920×1080, ~835 KB) im `style`-Attribut von `#heroBg`
+- **Hero-Bild** – lokales Asset `assets/header-pre-event.jpg` (2560×1440, ~0.81 MB) im `style`-Attribut von `#heroBg`
 - **Deployment** – GitHub Pages, Branch `main`, Root `/`
 - **Favicon** – Inline `data:URI` SVG (kein eigenes Favicon-File); **einheitlich „R"-SVG auf allen 4 Seiten** (Stand 2026-07-02 — die Unterseiten `format`/`kosten`/`faq` trugen vorher versehentlich ein Karo-Flaggen-SVG)
 
@@ -110,7 +110,7 @@ Hybrid Racing hat jetzt ein Logo-Asset: `logos/hybracing.png` (oranges „H"-Rac
 
 | Datei | Inhalt | Besonderheiten |
 |-------|--------|---------------|
-| `index.html` | Vollbild-Hero mit Foto + Parallax, Narrativ-Quote, Company-Grid (3 Karten), Saison-Grid (4 Karten), CTA-Block | Lokales Hero-Bild `assets/header-pre-event.png`; Porsche-Silhouette als `.hero-car`-Overlay; Parallax per Inline-Script |
+| `index.html` | Vollbild-Hero mit Foto + Parallax, Narrativ-Quote, Company-Grid (3 Karten), Saison-Grid (4 Karten), CTA-Block | Lokales Hero-Bild `assets/header-pre-event.jpg`; Porsche-Silhouette als `.hero-car`-Overlay; Parallax per Inline-Script |
 | `format.html` | Saisonkalender (Timeline), Regelwerk (6 Cards), Punktesystem (Podium + Tabelle + Bonus) | Standard-Hero (CSS only, kein Foto); Podium mit Shimmer-Animation |
 | `kosten.html` | 4 Event-Karten mit definitiven Preisen, Gesamttabelle (CHF 450.—/Person), Inbegriffen-Liste | Preise definitiv: CHF 90.— / CHF 180.—; Hinweis-Box über Verpflegung |
 | `faq.html` | 9 FAQ-Accordion-Items | Accordion per CSS max-height; `aria-expanded` wird per JS korrekt gesetzt |
@@ -122,7 +122,7 @@ Navigation und Footer sind **4× kopiert** (kein Include-Mechanismus).
 
 ```
 <header class="hero hero-main">
-  .hero-img-wrap                 ← Lokales Foto (header-pre-event.png) + Overlay
+  .hero-img-wrap                 ← Lokales Foto (header-pre-event.jpg) + Overlay
     #heroBg                      ← Parallax-Target (JS translateY)
     .hero-overlay
   .hero-logos                    ← Dual-Logo-Reihe (Lässer / Menzi Muck)
@@ -192,7 +192,7 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 - **Dark-Theme only** – kein Light-Mode-Toggle; bewusste Motorsport-Ästhetik-Entscheidung
 - **Cross-Site-Links direkt im href** (nicht via JS-Variable) – robuster gegen Browser-Caching
   (Commit `aefdb2b`, PR #10 gemergt)
-- **Hero `index.html` nutzt lokales Foto** – `assets/header-pre-event.png` direkt im `style`-Attribut
+- **Hero `index.html` nutzt lokales Foto** – `assets/header-pre-event.jpg` direkt im `style`-Attribut
   von `#heroBg`. Ersetzt vorherige Unsplash-URL (Commit `19d50af`).
 - **Parallax auf index.html**: Inline-IIFE am Seitenende manipuliert `#heroBg.style.transform`
   (nur Desktop ≥ 768 px). Nicht in `main.js` ausgelagert – bewusste Entscheidung für Inline-Scope. Bewegungsfaktor `translateY(scrollY * 0.06)` — bewusst dezent, abgestimmt auf den kleinen `.hero-bg`-Puffer (`inset: -4%`), damit kein Bild-Zoom entsteht und beim Scrollen keine Ränder frei werden.
@@ -224,10 +224,10 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 - **Footer-Struktur** (Stand 2026-07-02, einheitlich in allen 3 Repos): Sponsor-Logo-Reihe (`.footer-logos` — Lässer + Menzi Muck) + **5 Textzonen** in fester Reihenfolge — `.footer-presented` (Presented by …) · `.footer-powered` (Powered by + Hybrid-Racing-Logo `.logo-hybracing`, verlinkt auf hybracing.ch) · `.footer-credits` (Voll-Link „Website & Digital Infrastructure by Endrulabs.ch") · `.footer-links` (interne Seiten + Cross-Repo-Links) · `.footer-copy` („© 2026/2027 …"). Gradient-Trennlinie jetzt via `border-image: linear-gradient(to right,#FFD100,#003087)` auf `footer` — altes `footer::before` per `content:none` deaktiviert. `.footer-title` (alt) → `.footer-presented` umbenannt.
 - **Cross-Site-Links `target="_blank" rel="noopener"`** (Stand 2026-07-02): Alle Links zu den Schwester-Repos (`Racing-Event-Sing-In`, `firmen-racing-cup-2026`) in Navbar, Footer, CTA-Buttons und FAQ-Inline-Links öffnen in neuem Tab mit `rel="noopener"`; interne `.html`-Links bleiben bewusst ohne `target`.
 - **Performance** (Stand 2026-07-02): `loading="lazy"` auf allen Below-the-fold-Bildern (Company-Card- + Footer-Logos); Hero-Bilder ausgenommen. `preconnect` zu `fonts.googleapis.com`/`fonts.gstatic.com` in allen 4 `<head>`s vor dem Stylesheet-`<link>` (beschleunigt den Google-Fonts-`@import` in `style.css`).
-- **Open-Graph-Tags** (Stand 2026-07-02): `og:type`/`og:title`/`og:description`/`og:url` + **`og:image`** (Hero `assets/header-pre-event.png`) inkl. `og:image:width`/`og:image:height` (1920×1080) auf `index.html`.
+- **Open-Graph-Tags** (Stand 2026-07-02): `og:type`/`og:title`/`og:description`/`og:url` + **`og:image`** (Hero `assets/header-pre-event.jpg`) inkl. `og:image:width`/`og:image:height` (2560×1440) auf `index.html`.
 - **Totes CSS entfernt** (Stand 2026-07-02): ungenutzter `.company-wordmark`-Block aus `css/style.css` gelöscht — war nach der Hybrid-Logo-Integration in keiner HTML-Datei mehr referenziert.
 - **CEO Quality Pass V** (Stand 2026-07-02): (1) **Favicon** der Unterseiten `format`/`kosten`/`faq` von der Karo-Flagge auf das „R"-SVG von `index.html` vereinheitlicht — Browser-Tab-Icon jetzt seitenübergreifend identisch. (2) **`.section-heading`** von `clamp(1rem, 2.5vw, 1.5rem)` (max 24px) auf `clamp(1.4rem, 3vw, 2.1rem)` (max ~34px) vergrössert — stärkere Typo-Hierarchie zum 48px-Hero-Titel. (3) **`.btn-outline`** Ruhezustand-Textfarbe von `--color-text-muted` (#888) auf `--color-text` (weiss) — wirkt neben dem gelben Primär-Button nicht mehr „inaktiv"; Hover bleibt gelb (`--color-primary`).
-- **Hero-Bild als PNG** (Stand 2026-07-06): `assets/header-pre-event.png` (1920×1080, ~835 KB) ersetzt die vorherige komprimierte JPG-Variante (~0.48 MB) — höhere Bildqualität (bewusste Qualität-über-Ladezeit-Entscheidung, ~75 % grösser; kehrt die JPG-Optimierung aus „CEO Quality Pass IV" um). Aktualisierte Referenzen: `#heroBg`-Background-Image (`index.html`) + `og:image` (jetzt 1920×1080). Alte `header-pre-event.jpg` gelöscht.
+- **Hero-Bild optimiert** (Stand 2026-07-06): finales `assets/header-pre-event.jpg` — **2560×1440, ~0.81 MB**, optimierte JPG in höherer Auflösung (schärfer als die zwischenzeitliche 1920×1080-PNG-Variante bei vergleichbarer Dateigrösse). Referenzen: `#heroBg`-Background-Image (`index.html`) + `og:image` (`2560×1440`). Zwischen-Assets (PNG bzw. ältere JPG) entfernt.
 - **Hero-Bild-Zoom behoben** (Stand 2026-07-06): `.hero-bg` hatte `inset: -20%` → mit `background-size: cover` wirkte das Bild ~1,4× gezoomt. Auf `inset: -4%` reduziert (~1,04×, praktisch unzoomed); der Parallax-Faktor entsprechend von `0.32` auf `0.06` verkleinert, damit der kleinere Puffer beim Scrollen nicht überfahren wird. `cover` bleibt (Vollbild, nur natürlicher 16:9-Beschnitt).
 
 ---
@@ -260,7 +260,7 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 | `logos/LAESSER-Logo_RGB.png` | PNG (weiß auf transparent) | Derzeit ungenutzt (Reserve) |
 | `logos/menzimuck.png` | PNG (weiss/rot auf transparent) | Überall – kein Filter nötig |
 | `logos/hybracing.png` | PNG (orange auf dunkel) | Hybrid Racing Logo — Footer (`.logo-hybracing`) + 3. Company-Card auf `index.html`; verlinkt auf hybracing.ch |
-| `assets/header-pre-event.png` | PNG (1920×1080) | Hero-Hintergrundbild auf `index.html` (~835 KB) |
+| `assets/header-pre-event.jpg` | JPEG (2560×1440) | Hero-Hintergrundbild auf `index.html` (~0.81 MB) |
 | `assets/porsche-silhouette.svg` | SVG (`currentColor`) | Hero-Overlay als `.hero-car` (opacity via CSS) |
 
 ---
@@ -320,7 +320,7 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 
 ## Aktueller Branch-Status (Stand 2026-07-02)
 
-- `main`: Aktualisiert am 2026-07-06 — zuletzt: Hero-Bild-Zoom behoben (`.hero-bg` `inset` -20%→-4%, Parallax `0.32`→`0.06`). Davor: Hero-Bild durch höherwertiges PNG ersetzt (`assets/header-pre-event.png`, 1920×1080, ~835 KB; `#heroBg` + `og:image` nachgezogen, alte `.jpg` gelöscht). Davor (2026-07-02): CEO Quality Pass V (Favicon Unterseiten → „R"-SVG, `.section-heading` grösser, `.btn-outline` Ruhezustand weiss), Docs finaler Stand, Footer vereinheitlicht (Sponsor-Logos + 5 Textzonen, `.footer-title`→`.footer-presented`, Gradient via `border-image`), `og:image` (+ width/height) auf `index.html`, totes `.company-wordmark`-CSS entfernt, Hybrid-Racing-Logo in Footer + Company-Card, Anmeldeschluss-Badge 31.07.2026, Cross-Site-Links `target="_blank" rel="noopener"`, `loading="lazy"`, `preconnect`+`display=swap` für Google Fonts, OG-Tags. Keine offenen Feature-Branches.
+- `main`: Aktualisiert am 2026-07-06 — zuletzt: Hero-Bild final als optimierte JPG (`assets/header-pre-event.jpg`, 2560×1440, ~0.81 MB; `#heroBg` + `og:image` auf `.jpg`/2560×1440 gezogen). Davor: Hero-Bild-Zoom behoben (`.hero-bg` `inset` -20%→-4%, Parallax `0.32`→`0.06`). Davor (2026-07-02): CEO Quality Pass V (Favicon Unterseiten → „R"-SVG, `.section-heading` grösser, `.btn-outline` Ruhezustand weiss), Docs finaler Stand, Footer vereinheitlicht (Sponsor-Logos + 5 Textzonen, `.footer-title`→`.footer-presented`, Gradient via `border-image`), `og:image` (+ width/height) auf `index.html`, totes `.company-wordmark`-CSS entfernt, Hybrid-Racing-Logo in Footer + Company-Card, Anmeldeschluss-Badge 31.07.2026, Cross-Site-Links `target="_blank" rel="noopener"`, `loading="lazy"`, `preconnect`+`display=swap` für Google Fonts, OG-Tags. Keine offenen Feature-Branches.
   - `cb6898b`: Docs: CLAUDE.md + README.md aktualisiert — finaler Stand nach technischer Prüfung
   - `bc76af7`: Feature: og:image + Footer vereinheitlicht (5 Zonen) + totes CSS .company-wordmark entfernt
   - `af352d2`: Feature: Hybrid Racing Logo + Link integriert
