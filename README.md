@@ -33,7 +33,7 @@ Alle Events bei **Hybrid Racing Au SG**, Start jeweils ab 19:00 Uhr.
 ├── js/
 │   └── main.js         ← Countdown, FAQ-Accordion, Navigation
 ├── assets/
-│   ├── header-pre-event.jpg    ← Hero-Hintergrundbild (index.html)
+│   ├── header-pre-event.png    ← Hero-Hintergrundbild (index.html, 1920×1080)
 │   └── porsche-silhouette.svg
 └── logos/
     ├── LAESSER-Logo_CMYK.png
