@@ -1153,10 +1153,10 @@ footer::before {
   overflow: hidden;
 }
 
-/* Extra Abstand für Parallax-Bewegung */
+/* Extra Abstand für Parallax-Bewegung (klein gehalten → kein Bild-Zoom) */
 .hero-bg {
   position: absolute;
-  inset: -20%;
+  inset: -8%;
   background-size: cover;
   background-position: center center;
   will-change: transform;
