@@ -1685,3 +1685,70 @@ footer::before { content: none; }
 .footer-credits a { color: var(--color-text-muted); font-size: 0.8rem; text-decoration: none; }
 .footer-credits a:hover { color: var(--color-primary); }
 .footer-copy { color: var(--color-text-muted); font-size: 0.75rem; margin-top: 8px; }
+
+/* ══════════════════════════════════════════════════════════════
+   MOBILE OPTIMIERUNG — additiv via @media, Desktop (>768px) unverändert
+══════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* Touch-Targets ≥ 44×44px */
+  .btn,
+  .btn-secondary {
+    min-height: 44px;
+    padding: .65rem 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-toggle {
+    min-width: 44px;
+    min-height: 44px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer-links a {
+    padding: .5rem .3rem;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  /* Bilder: kein horizontaler Overflow */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Tabellen: horizontaler Scroll mit gelbem Scroll-Hint rechts */
+  .total-card {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-right: 3px solid rgba(255, 209, 0, .35);
+  }
+  .total-table {
+    min-width: 420px;
+  }
+}
+
+@media (max-width: 360px) {
+  .container,
+  .container-wide {
+    padding: 0 .85rem;
+  }
+
+  .countdown-strip {
+    padding: .75rem .85rem;
+    gap: .75rem;
+  }
+
+  .hero-ctas .btn {
+    width: 100%;
+  }
+
+  .footer-logos {
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+}
