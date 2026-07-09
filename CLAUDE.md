@@ -33,8 +33,8 @@
 
 ## Projektziel
 
-Öffentliche Info-Website für den **Firmen Racing Cup 2026/2027** – ein Sim-Racing-Event bei
-Hybrid Racing in Au SG. Die Website präsentiert Event-Details, Rennformat, Kosten, FAQ
+Öffentliche Info-Website für den **Firmen Racing Cup 2026/2027** – ein Sim-Racing-Event im
+Hybracing Center in Au SG. Die Website präsentiert Event-Details, Rennformat, Kosten, FAQ
 sowie Cross-Links zum Anmeldeportal und zur Rangliste (externe Repos).
 
 Zielgruppe: Mitarbeitende von Lässer Stickmaschinen und Menzi Muck AG,
@@ -48,7 +48,7 @@ die ein Team anmelden oder sich über die Meisterschaft informieren wollen.
 |-------|-------|---------|
 | Lässer Stickmaschinen AG (Widnau) | Co-Veranstalter / Presented by | laesser.ch |
 | Menzi Muck AG | Co-Veranstalter / Presented by | menzimuck.com |
-| Hybrid Racing (Au SG) | Austragungsort, Simulator-Provider | – |
+| Hybracing Center GmbH (Nollenhornstrasse 7, CH-9434 Au SG) | Austragungsort, Simulator-Provider | hybracing.ch |
 
 ---
 
@@ -61,7 +61,7 @@ die ein Team anmelden oder sich über die Meisterschaft informieren wollen.
 | Event 03 — Weather Challenge | Do. 19. November 2026 | Nürburgring Sprint GT | CHF 90.— |
 | Grand Finale | Fr. 16. Januar 2027 | Nürburgring Nordschleife | CHF 180.— |
 
-- Alle Events bei **Hybrid Racing Au SG**, Start jeweils ab **19:00 Uhr**
+- Alle Events im **Hybracing Center** (Hybracing Center GmbH, Nollenhornstrasse 7, CH-9434 Au SG), Start jeweils ab **19:00 Uhr**
 - Format normal: 20' Training + 10' Qualifying + 60' Rennen
 - Format E03: 20' Training + 10' Qualifying + 90' Rennen (Weather Challenge)
 - Format Finale: 30' Training + 30' Qualifying + 3h Rennen · Pflicht-Fahrerwechsel · ×2 Punkte
@@ -88,7 +88,7 @@ Fonts: **Orbitron** (Headlines, monospace Motorsport-Font) · **Rajdhani** (Body
 Beide via Google Fonts CDN geladen.
 
 Logo-Besonderheit: `menzimuck.png` ist weiss/rot auf transparent → kein CSS-Filter nötig.
-Hybrid Racing hat jetzt ein Logo-Asset: `logos/hybracing.png` (oranges „H"-Racing-Symbol auf Dunkel) — ersetzt den früheren `.company-wordmark`-Textplatzhalter.
+Das Hybracing Center hat jetzt ein Logo-Asset: `logos/hybracing.png` (oranges „H"-Racing-Symbol auf Dunkel) — ersetzt den früheren `.company-wordmark`-Textplatzhalter.
 
 ---
 
@@ -134,7 +134,7 @@ Navigation und Footer sind **4× kopiert** (kein Include-Mechanismus).
 .section-divider
 .narrative-section               ← Blockquote / Claim
 .section-divider
-.section → .company-grid         ← 3 Company-Cards (Lässer, Menzi Muck, Hybrid Racing)
+.section → .company-grid         ← 3 Company-Cards (Lässer, Menzi Muck, Hybracing Center)
 .section-divider
 .section → .season-grid          ← 4 Season-Cards mit definitiven Daten + Saison 2026/2027
 .section-sm → .cta-block
@@ -151,7 +151,7 @@ Kein serverseitiges Datenmodell – alles ist statischer HTML-Content.
 
 ### Saison-Struktur (hardcoded in format.html + index.html)
 ```
-4 Events — alle bei Hybrid Racing Au SG, ab 19:00 Uhr:
+4 Events — alle im Hybracing Center (Au SG), ab 19:00 Uhr:
 ├── Event 01 – Season Opener    | Do. 10. Sep. 2026 | Spielberg South Course      | 20' T + 10' Q + 60' R
 ├── Event 02 – Round 2          | Do. 15. Okt. 2026 | Hockenheim / Brands Hatch   | 20' T + 10' Q + 60' R
 ├── Event 03 – Weather Challenge| Do. 19. Nov. 2026 | Nürburgring Sprint GT       | 20' T + 10' Q + 90' R
@@ -203,7 +203,7 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 - **Fliesstext-Farbe weiss** — alle Beschreibungs- und Body-Texte (`--color-text`) statt grau (`--color-text-muted`). Grau bleibt nur für UI-Elemente: Nav-Links, Countdown-Labels, Badges, Buttons, Footer-Nav (Commit `86fb076`)
 - **Menzi-Muck-Logo** neues PNG (weiss/rot auf transparent) — CSS-Filter `invert()` entfernt (war Workaround für altes schwarz/rotes Logo)
 - **Keine Emojis in UI** — Rule-Cards: nummerische Icons `01`–`06` (Orbitron/Gelb); Kosten-Cards: `E.01`–`E.03` / `GF`; Hinweis-Icons: `▸` (Typografie-Zeichen). Emojis wirkten Gaming-assoziiert, nicht corporate (Commit `a7eddc8`)
-- **Hybrid Racing Logo** (Stand 2026-07-02): echtes Logo `logos/hybracing.png` integriert — ersetzt den `.company-wordmark`-Textplatzhalter in der 3. Company-Card (`index.html`, verlinkt auf `https://hybracing.ch/`) und erscheint im Footer aller Seiten neben „Powered by Hybrid Racing Au SG". Styling via neuer Klasse `.logo-hybracing` (28px, `opacity` .85 → 1 bei Hover). Historie: vorher `.company-wordmark` (Orbitron-Text in blauer Border-Box), noch früher `.company-initials "HR"` (Commit `a4c9dc9`).
+- **Hybracing-Center-Logo** (Stand 2026-07-02): echtes Logo `logos/hybracing.png` integriert — ersetzt den `.company-wordmark`-Textplatzhalter in der 3. Company-Card (`index.html`, verlinkt auf `https://hybracing.ch/`) und erscheint im Footer aller Seiten neben „Powered by Hybracing Center". Styling via neuer Klasse `.logo-hybracing` (28px, `opacity` .85 → 1 bei Hover). Historie: vorher `.company-wordmark` (Orbitron-Text in blauer Border-Box), noch früher `.company-initials "HR"` (Commit `a4c9dc9`).
 - **Sub-Page-Hero** — alle 3 Sub-Pages (`format.html`, `kosten.html`, `faq.html`) verwenden `class="hero hero-page"`; `.hero-page` definiert `min-height: 56vh` + Padding (vormals 44vh, erhöht für mehr Präsenz)
 - **CEO Quality Pass III** (Commit `a4c9dc9`): Lesbarkeit und Konsistenz — `.tag-datum`, `.points-table td`, `.total-table td`, `.countdown-strip .countdown-label` von `--color-text-muted` auf `--color-text` (weiss); Titel-Tags aller Seiten auf „2026/2027" vereinheitlicht; Bonus-Card Inline-Styles durch `.bonus-card--finale` ersetzt; `format.html` CTA zweiten Button ergänzt
 - **Timeline Finale** — Nummernkreis zeigt `GF` statt `F` (klarer, kein Buchstaben-Placeholder-Look)
@@ -230,6 +230,7 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 - **Hero-Bild optimiert** (Stand 2026-07-06): finales `assets/header-pre-event.jpg` — **2560×1440, ~0.81 MB**, optimierte JPG in höherer Auflösung (schärfer als die zwischenzeitliche 1920×1080-PNG-Variante bei vergleichbarer Dateigrösse). Referenzen: `#heroBg`-Background-Image (`index.html`) + `og:image` (`2560×1440`). Zwischen-Assets (PNG bzw. ältere JPG) entfernt.
 - **Hero-Bild-Zoom behoben** (Stand 2026-07-06): `.hero-bg` hatte `inset: -20%` → mit `background-size: cover` wirkte das Bild ~1,4× gezoomt. Auf `inset: -4%` reduziert (~1,04×, praktisch unzoomed); der Parallax-Faktor entsprechend von `0.32` auf `0.06` verkleinert, damit der kleinere Puffer beim Scrollen nicht überfahren wird. `cover` bleibt (Vollbild, nur natürlicher 16:9-Beschnitt).
 - **Mobile-Optimierung via @media-Queries — Desktop unverändert** (Stand 2026-07-07): Zwei rein additive `@media`-Blöcke am Ende von `css/style.css` angehängt (`≤768px` + `≤360px`); kein bestehendes CSS verändert, Desktop (>768px) identisch. Ergänzt: Touch-Targets ≥44×44px (`.btn`, `.btn-secondary`, `.nav-toggle`, `.footer-links a`), Bild-Overflow-Schutz (`img { max-width:100%; height:auto }`), Tabellen-Scroll auf `.total-card` mit gelbem Scroll-Hint-Border rechts, Container-Padding bei ≤360px, `.hero-ctas .btn { width:100% }` + `.footer-logos { flex-wrap:wrap }` bei ≤360px. Hamburger-Nav, `clamp()`-Fonts, Grid-Collapse und `loading="lazy"` waren bereits vorhanden.
+- **Veranstaltungsort-Name korrigiert** (Stand 2026-07-09): Der Austragungsort heisst **„Hybracing Center"**, nicht „Hybrid Racing Au SG". Alle Vorkommen in `index.html`, `format.html`, `kosten.html`, `faq.html` (inkl. Meta-Description, Countdown-Note, Company-Card, Hinweis-Boxen, FAQ-Antworten, Footer/`alt`/`title`), `css/style.css`-Header-Kommentar sowie `README.md` umgestellt. Der **vollständige Name mit Adresse** — „Hybracing Center GmbH, Nollenhornstrasse 7, CH-9434 Au SG" — steht an drei Stellen: Company-Card (`index.html`), Orts-Hinweisbox (`format.html`), FAQ-Antwort „Wann finden die Events statt?" sowie im `title`-Attribut des Footer-Logo-Links aller Seiten. Alle Hybracing-Links zeigen unverändert auf `https://hybracing.ch/`.
 
 ---
 
@@ -260,7 +261,7 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 | `logos/LAESSER-Logo_CMYK.png` | PNG (weiß auf transparent) | Hero, Partner-Bereich, Footer – kein Filter nötig |
 | `logos/LAESSER-Logo_RGB.png` | PNG (weiß auf transparent) | Derzeit ungenutzt (Reserve) |
 | `logos/menzimuck.png` | PNG (weiss/rot auf transparent) | Überall – kein Filter nötig |
-| `logos/hybracing.png` | PNG (orange auf dunkel) | Hybrid Racing Logo — Footer (`.logo-hybracing`) + 3. Company-Card auf `index.html`; verlinkt auf hybracing.ch |
+| `logos/hybracing.png` | PNG (orange auf dunkel) | Hybracing-Center-Logo — Footer (`.logo-hybracing`) + 3. Company-Card auf `index.html`; verlinkt auf hybracing.ch |
 | `assets/header-pre-event.jpg` | JPEG (2560×1440) | Hero-Hintergrundbild auf `index.html` (~0.81 MB) |
 | `assets/porsche-silhouette.svg` | SVG (`currentColor`) | Hero-Overlay als `.hero-car` (opacity via CSS) |
 

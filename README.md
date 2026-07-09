@@ -1,7 +1,8 @@
 # Firmen Racing Cup 2026/2027 – Info-Website
 
 Öffentliche Info-Website für den Firmen Racing Cup 2026/2027.  
-Presented by **Lässer Stickmaschinen** & **Menzi Muck AG** | Hosted at **Hybrid Racing, Au SG**
+Presented by **Lässer Stickmaschinen** & **Menzi Muck AG** | Hosted at **Hybracing Center**  
+Hybracing Center GmbH, Nollenhornstrasse 7, CH-9434 Au SG
 
 ---
 
@@ -14,7 +15,7 @@ Presented by **Lässer Stickmaschinen** & **Menzi Muck AG** | Hosted at **Hybrid
 | Event 03 — Weather Challenge | Do. 19. November 2026 | Nürburgring Sprint GT | CHF 90.— |
 | Grand Finale | Fr. 16. Januar 2027 | Nürburgring Nordschleife | CHF 180.— |
 
-Alle Events bei **Hybrid Racing Au SG**, Start jeweils ab 19:00 Uhr.
+Alle Events im **Hybracing Center**, Start jeweils ab 19:00 Uhr.
 
 **Anmeldeschluss: 31. Juli 2026** — Anmeldung über das Anmeldeportal (siehe „Verwandte Apps").
 
@@ -38,7 +39,7 @@ Alle Events bei **Hybrid Racing Au SG**, Start jeweils ab 19:00 Uhr.
 └── logos/
     ├── LAESSER-Logo_CMYK.png
     ├── menzimuck.png
-    └── hybracing.png       ← Hybrid Racing Logo (Footer + Company-Card)
+    └── hybracing.png       ← Hybracing-Center-Logo (Footer + Company-Card)
 ```
 
 ---
@@ -92,4 +93,4 @@ Alle Events bei **Hybrid Racing Au SG**, Start jeweils ab 19:00 Uhr.
 
 ---
 
-© 2026/2027 Firmen Racing Cup · Hybrid Racing, Au SG
+© 2026/2027 Firmen Racing Cup · Hybracing Center, Au SG
