@@ -230,6 +230,7 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 - **Hero-Bild optimiert** (Stand 2026-07-06): finales `assets/header-pre-event.jpg` — **2560×1440, ~0.81 MB**, optimierte JPG in höherer Auflösung (schärfer als die zwischenzeitliche 1920×1080-PNG-Variante bei vergleichbarer Dateigrösse). Referenzen: `#heroBg`-Background-Image (`index.html`) + `og:image` (`2560×1440`). Zwischen-Assets (PNG bzw. ältere JPG) entfernt.
 - **Hero-Bild-Zoom behoben** (Stand 2026-07-06): `.hero-bg` hatte `inset: -20%` → mit `background-size: cover` wirkte das Bild ~1,4× gezoomt. Auf `inset: -4%` reduziert (~1,04×, praktisch unzoomed); der Parallax-Faktor entsprechend von `0.32` auf `0.06` verkleinert, damit der kleinere Puffer beim Scrollen nicht überfahren wird. `cover` bleibt (Vollbild, nur natürlicher 16:9-Beschnitt).
 - **Mobile-Optimierung via @media-Queries — Desktop unverändert** (Stand 2026-07-07): Zwei rein additive `@media`-Blöcke am Ende von `css/style.css` angehängt (`≤768px` + `≤360px`); kein bestehendes CSS verändert, Desktop (>768px) identisch. Ergänzt: Touch-Targets ≥44×44px (`.btn`, `.btn-secondary`, `.nav-toggle`, `.footer-links a`), Bild-Overflow-Schutz (`img { max-width:100%; height:auto }`), Tabellen-Scroll auf `.total-card` mit gelbem Scroll-Hint-Border rechts, Container-Padding bei ≤360px, `.hero-ctas .btn { width:100% }` + `.footer-logos { flex-wrap:wrap }` bei ≤360px. Hamburger-Nav, `clamp()`-Fonts, Grid-Collapse und `loading="lazy"` waren bereits vorhanden.
+- **Kein Impressum / keine Datenschutzerklärung** (Stand 2026-07-09): Bewusste Entscheidung — interne Firmenveranstaltung für Mitarbeitende von Lässer und Menzi Muck AG, kein öffentlicher Verkauf, kein redaktioneller Inhalt für Dritte. Schweizer nDSG greift bei rein internem Firmenkontext nicht. Nicht zu implementieren.
 - **Veranstaltungsort-Name korrigiert** (Stand 2026-07-09): Der Austragungsort heisst **„Hybracing Center"**, nicht „Hybrid Racing Au SG". Alle Vorkommen in `index.html`, `format.html`, `kosten.html`, `faq.html` (inkl. Meta-Description, Countdown-Note, Company-Card, Hinweis-Boxen, FAQ-Antworten, Footer/`alt`/`title`), `css/style.css`-Header-Kommentar sowie `README.md` umgestellt. Der **vollständige Name mit Adresse** — „Hybracing Center GmbH, Nollenhornstrasse 7, CH-9434 Au SG" — steht an drei Stellen: Company-Card (`index.html`), Orts-Hinweisbox (`format.html`), FAQ-Antwort „Wann finden die Events statt?" sowie im `title`-Attribut des Footer-Logo-Links aller Seiten. Alle Hybracing-Links zeigen unverändert auf `https://hybracing.ch/`.
 
 ---
@@ -289,21 +290,23 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 
 ---
 
-## Offene Punkte (Stand 2026-07-02)
-
-### Hoch
-- [ ] Open-Graph-Meta-Tags auf **allen** Seiten (`index.html` vollständig inkl. `og:image` + width/height; Unterseiten `format`/`kosten`/`faq` noch ohne OG)
-- [ ] CNAME-Datei committen (Custom Domain `info.racing-cup-2026.ch`)
+## Offene Punkte (Stand 2026-07-09)
 
 ### Niedrig
-- [x] Hybrid Racing: echtes Logo-Asset `logos/hybracing.png` integriert (Footer + Company-Card, Stand 2026-07-02) — ersetzt `.company-wordmark`-Platzhalter
-- [ ] Impressum / Datenschutzerklärung (Schweizer DSG / nDSG)
 - [ ] Favicon als echte `.ico`/`.png`-Datei (aktuell nur `data:URI` inline SVG)
-- [ ] 404-Seite für GitHub Pages (`404.html`)
 - [ ] Countdown auf `setInterval` umstellen (robuster als rekursiver `setTimeout`)
 - [ ] Parallax-Script aus `index.html` in `js/main.js` auslagern (technische Schuld)
 
 ### Erledigt
+- [x] **OG-Tags** auf allen 4 Seiten vollständig (`og:image` + width/height auf `index.html`; `og:type/title/description/url/image` auf `format`/`kosten`/`faq` ergänzt, Commit 2026-07-09)
+- [x] **CNAME-Datei** committert (`info.racing-cup-2026.ch`, Commit 2026-07-09)
+- [x] **FAQ F9** Kontaktadresse `firmacup@endrulabs.ch` ergänzt (Commit 2026-07-09)
+- [x] **404.html** im Corporate Design erstellt (Commit 2026-07-09)
+- [x] **Tote CSS-Klassen** entfernt: `.countdown-wrapper`, `.highlights-grid`, `.highlight-card/icon/title/text`, `.tbd-badge`, `.company-initials`, `.partner-section/logos/logo-slot/label` (Commit 2026-07-09)
+- [x] **Doppelte `footer {}`** in `css/style.css` konsolidiert: erste Deklaration + `footer::before` Gradient-Stripe entfernt; einzige `footer {}` ab Z. ~960 mit `background` + `border-image` (Commit 2026-07-09)
+- [x] **Hybracing-Center-Kachel** (`index.html`): Adresse aus `company-desc` entfernt — einheitlich mit Lässer/Menzi-Muck-Kacheln (Commit 2026-07-09)
+- [x] **Kein Impressum** — bewusste Entscheidung: interne Firmenveranstaltung, kein öffentlicher Verkauf, kein redaktioneller Inhalt für Dritte; Schweizer nDSG greift bei rein internem Firmenkontext nicht
+- [x] Hybrid Racing: echtes Logo-Asset `logos/hybracing.png` integriert (Footer + Company-Card, Stand 2026-07-02) — ersetzt `.company-wordmark`-Platzhalter
 - [x] Preise eingetragen: CHF 90.— (normale Events) / CHF 180.— (Grand Finale)
 - [x] Season-Opener-Datum gesetzt: `2026-09-10T19:00:00` (Do. 10. September 2026)
 - [x] Alle Event-Termine in Timeline, Season-Grid und FAQ befüllt und konsistent
@@ -320,17 +323,14 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 
 ---
 
-## Aktueller Branch-Status (Stand 2026-07-02)
+## Aktueller Branch-Status (Stand 2026-07-09)
 
-- `main`: Aktualisiert am 2026-07-06 — zuletzt: Hero-Bild final als optimierte JPG (`assets/header-pre-event.jpg`, 2560×1440, ~0.81 MB; `#heroBg` + `og:image` auf `.jpg`/2560×1440 gezogen). Davor: Hero-Bild-Zoom behoben (`.hero-bg` `inset` -20%→-4%, Parallax `0.32`→`0.06`). Davor (2026-07-02): CEO Quality Pass V (Favicon Unterseiten → „R"-SVG, `.section-heading` grösser, `.btn-outline` Ruhezustand weiss), Docs finaler Stand, Footer vereinheitlicht (Sponsor-Logos + 5 Textzonen, `.footer-title`→`.footer-presented`, Gradient via `border-image`), `og:image` (+ width/height) auf `index.html`, totes `.company-wordmark`-CSS entfernt, Hybrid-Racing-Logo in Footer + Company-Card, Anmeldeschluss-Badge 31.07.2026, Cross-Site-Links `target="_blank" rel="noopener"`, `loading="lazy"`, `preconnect`+`display=swap` für Google Fonts, OG-Tags. Keine offenen Feature-Branches.
-  - `cb6898b`: Docs: CLAUDE.md + README.md aktualisiert — finaler Stand nach technischer Prüfung
-  - `bc76af7`: Feature: og:image + Footer vereinheitlicht (5 Zonen) + totes CSS .company-wordmark entfernt
-  - `af352d2`: Feature: Hybrid Racing Logo + Link integriert
-  - `1ffe81e`: Fix & Docs: Anmeldeschluss 31.07, target/_blank, lazy-loading, preconnect, OG-Tags, README aktuell
-  - `6be7ac4`: Docs: CLAUDE.md Branch-Status aktualisiert + Cross-Repo-Kontext dokumentiert
-  - `f0a3499`: Fix: CEO Quality Pass IV — Navbar-Brand, Countdown-Emoji, Hero-Bild komprimiert
-  - `a4c9dc9`: Fix: CEO Quality Pass III — Lesbarkeit, Konsistenz, Markennamen
-  - `a7eddc8`: Design: CEO Quality Pass II — Emojis, Placeholder, Daten, Inline-Styles bereinigt
+- `main`: Aktualisiert am 2026-07-09 — zuletzt: OG-Tags auf allen 4 Seiten vollständig; CNAME-Datei committet (`info.racing-cup-2026.ch`); FAQ F9 Kontakt `firmacup@endrulabs.ch`; `404.html` im Corporate Design; CSS-Cleanup (tote Klassen, doppelte `footer {}`); Hybracing-Adresse aus Company-Kachel entfernt; Veranstaltungsort-Name fix (1b2defe). Davor (2026-07-06): Hero-Bild final als optimierte JPG (2560×1440, ~0.81 MB). Davor: Hero-Zoom-Fix, Mobile-Optimierung, CEO Quality Passes I–V.
+  - `1b2defe`: Fix: Veranstaltungsort „Hybrid Racing Au SG" → „Hybracing Center" auf allen Seiten
+  - `dcaf1ed`: Feature: Mobile-Optimierung via additiver @media-Queries
+  - `8dc522e`: Feature: Hero-Bild optimierte JPG (2560×1440, ~0.81 MB)
+  - `c9a1eac`: Fix: Hero-Zoom weiter reduziert
+  - `cb6898b`: Docs: CLAUDE.md + README.md aktualisiert
 
 **Cross-Repo-Kontext (Stand 2026-07-02):** In den beiden Schwester-Repos wurden im Rahmen eines
 Cross-Repo-CEO-Quality-Passes lokale, noch nicht committete Fixes vorgenommen (ausgehend von

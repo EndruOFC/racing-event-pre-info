@@ -407,21 +407,6 @@ a:focus-visible            { outline: 2px solid var(--color-primary); outline-of
 /* ══════════════════════════════════════════════════════════════
    COUNTDOWN
 ══════════════════════════════════════════════════════════════ */
-.countdown-wrapper {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border-subtle);
-  border-left: 3px solid var(--color-primary);
-  border-radius: var(--radius-lg);
-  padding: 2rem 1.5rem;
-  text-align: center;
-  box-shadow: var(--shadow-soft);
-  margin-bottom: 2rem;
-  position: relative;
-  z-index: 1;
-  transition: box-shadow var(--t);
-}
-.countdown-wrapper:hover { box-shadow: var(--shadow-strong); }
-
 .countdown-label {
   font-family: var(--font-display);
   font-size: .62rem;
@@ -491,40 +476,6 @@ a:focus-visible            { outline: 2px solid var(--color-primary); outline-of
   letter-spacing: .1em;
   margin-top: .5rem;
 }
-
-/* ══════════════════════════════════════════════════════════════
-   HIGHLIGHT-KACHELN — Left-Border Gelb
-══════════════════════════════════════════════════════════════ */
-.highlights-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.25rem;
-  margin-top: 2.5rem;
-}
-
-.highlight-card {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border-subtle);
-  border-left: 3px solid var(--color-primary);
-  border-radius: var(--radius-lg);
-  padding: 1.75rem 1.5rem;
-  transition: transform var(--t), box-shadow var(--t);
-}
-.highlight-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-soft); }
-
-.highlight-icon  { font-size: 1.75rem; margin-bottom: .85rem; display: block; }
-
-.highlight-title {
-  font-family: var(--font-display);
-  font-size: .68rem;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: var(--color-primary);
-  margin-bottom: .5rem;
-}
-
-.highlight-text          { color: var(--color-text); font-size: .9rem; line-height: 1.55; }
-.highlight-text strong   { color: var(--color-text); }
 
 /* ══════════════════════════════════════════════════════════════
    CTA-BEREICH
@@ -918,21 +869,6 @@ a:focus-visible            { outline: 2px solid var(--color-primary); outline-of
 .kosten-preis .placeholder { color: var(--color-text-muted); font-size: 1.1rem; }
 .kosten-info { color: var(--color-text); font-size: .88rem; line-height: 1.55; }
 
-/* TBD-Badge für Kosten-Platzhalter */
-.tbd-badge {
-  display: inline-block;
-  font-family: var(--font-display);
-  font-size: .52rem;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: var(--color-text-muted);
-  background: rgba(255, 255, 255, .04);
-  border: 1px solid rgba(255, 255, 255, .09);
-  padding: .4rem 1rem;
-  border-radius: 2px;
-  vertical-align: middle;
-}
-
 /* Hinweisbox — Lässer Blau Akzent */
 .hinweis-box {
   background: rgba(0, 48, 135, .10);
@@ -1011,67 +947,8 @@ a:focus-visible            { outline: 2px solid var(--color-primary); outline-of
 .faq-antwort-inner a      { color: var(--color-primary); }
 
 /* ══════════════════════════════════════════════════════════════
-   SPONSOREN / PARTNER
-══════════════════════════════════════════════════════════════ */
-.partner-section {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border-subtle);
-  border-radius: var(--radius-lg);
-  padding: 2rem 1.5rem;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-.partner-label {
-  font-family: var(--font-display);
-  font-size: .56rem;
-  letter-spacing: .3em;
-  text-transform: uppercase;
-  color: var(--color-text-muted);
-  margin-bottom: 1.5rem;
-}
-
-.partner-logos {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2.5rem;
-}
-
-.partner-logo-slot {
-  width: 140px;
-  height: 56px;
-  border: 1px dashed rgba(255,255,255,.09);
-  border-radius: var(--radius);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-dunkel);
-  font-size: .78rem;
-  letter-spacing: .08em;
-  transition: border-color var(--t);
-}
-.partner-logo-slot:hover { border-color: rgba(255,209,0,.18); }
-
-/* ══════════════════════════════════════════════════════════════
    FOOTER — Würdevoll, präzise
 ══════════════════════════════════════════════════════════════ */
-footer {
-  background: var(--color-dark);
-  padding: 0 1.5rem 2.5rem;
-  text-align: center;
-}
-
-/* Gelb/Blau Gradient-Stripe — Pflichtanforderung */
-footer::before {
-  content: '';
-  display: block;
-  height: 2px;
-  background: linear-gradient(90deg, var(--color-secondary) 0%, var(--color-primary) 50%, var(--color-secondary) 100%);
-  margin-bottom: 3rem;
-}
-
 .footer-logos {
   display: flex;
   align-items: center;
@@ -1310,22 +1187,6 @@ footer::before {
   max-width: 140px;
   width: auto;
   object-fit: contain;
-}
-
-.company-initials {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background: var(--color-secondary);
-  color: var(--color-text);
-  font-family: var(--font-display);
-  font-size: .7rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  letter-spacing: .04em;
-  margin: 0 auto;
 }
 
 .company-role {
@@ -1669,14 +1530,14 @@ footer::before {
 .includes-list--muted { opacity: .7; }
 
 
-/* ── Footer vereinheitlicht (Stand 2026-07-02) ── */
+/* ── Footer — einzige Deklaration (konsolidiert 2026-07-09) ── */
 footer {
+  background: var(--color-dark);
   text-align: center;
   padding: 40px 20px;
   border-top: 1px solid;
   border-image: linear-gradient(to right, #FFD100, #003087) 1;
 }
-footer::before { content: none; }
 .footer-presented { color: var(--color-text); font-size: 0.95rem; margin-bottom: 8px; }
 .footer-powered  { color: var(--color-text); font-size: 0.9rem;  margin-bottom: 12px; }
 .footer-links    { margin-bottom: 12px; }
