@@ -56,7 +56,7 @@ die ein Team anmelden oder sich über die Meisterschaft informieren wollen.
 
 | Event | Datum | Strecke | Kosten/Person |
 |-------|-------|---------|--------------|
-| Event 01 — Season Opener | Do. 10. September 2026 | Spielberg South Course | CHF 90.— |
+| Event 01 — Season Opener | Do. 24. September 2026 | Spielberg South Course | CHF 90.— |
 | Event 02 — Round 2 | Do. 15. Oktober 2026 | Hockenheim / Brands Hatch | CHF 90.— |
 | Event 03 — Weather Challenge | Do. 19. November 2026 | Nürburgring Sprint GT | CHF 90.— |
 | Grand Finale | Fr. 16. Januar 2027 | Nürburgring Nordschleife | CHF 180.— |
@@ -152,7 +152,7 @@ Kein serverseitiges Datenmodell – alles ist statischer HTML-Content.
 ### Saison-Struktur (hardcoded in format.html + index.html)
 ```
 4 Events — alle im Hybracing Center (Au SG), ab 19:00 Uhr:
-├── Event 01 – Season Opener    | Do. 10. Sep. 2026 | Spielberg South Course      | 20' T + 10' Q + 60' R
+├── Event 01 – Season Opener    | Do. 24. Sep. 2026 | Spielberg South Course      | 20' T + 10' Q + 60' R
 ├── Event 02 – Round 2          | Do. 15. Okt. 2026 | Hockenheim / Brands Hatch   | 20' T + 10' Q + 60' R
 ├── Event 03 – Weather Challenge| Do. 19. Nov. 2026 | Nürburgring Sprint GT       | 20' T + 10' Q + 90' R
 └── Grand Finale                | Fr. 16. Jan. 2027 | Nürburgring Nordschleife    | 30' T + 30' Q + 3h R · ×2 Punkte
@@ -176,7 +176,7 @@ Wertung: Teamwertung (2 Fahrer/Team), 8 Teams total
 
 ### Konfiguration (js/main.js)
 ```js
-CONFIG.SEASON_OPENER = '2026-09-10T19:00:00'  // Do. 10. September 2026
+CONFIG.SEASON_OPENER = '2026-09-24T19:00:00'  // Do. 24. September 2026
 ```
 
 ### Cross-Site-Links (hardcoded im HTML, nicht per JS)
@@ -216,7 +216,7 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
   HTML enthält zusätzlich statisches `.aktiv` als Fallback
 - **Navbar-Hintergrund** verdunkelt sich via JS-scroll-Listener (`rgba(10,10,10,.85)` → `.97`);
   kein CSS-only Shrink (Unterschied zu Racing-Event-Sing-In, das `.navbar--shrunk` nutzt)
-- **Anmeldeschluss-Badge** (Commit `6bef146`): `.deadline-badge` — rot hinterlegt (`rgba(220,38,38,.10)`), rote Border, `#fc8181` Text, Orbitron/Uppercase. Platziert in `index.html` unter Hero-CTAs und unter CTA-Block-Buttons. Zeigt „⚠ Anmeldeschluss: 31. Juli 2026" (Stand 2026-07-02 von 31.08. auf 31.07.2026 vorgezogen — konsistent mit `CONFIG.ANMELDEFRIST` im Anmeldeportal `Racing-Event-Sing-In`).
+- **Anmeldeschluss-Badge** (Commit `6bef146`): `.deadline-badge` — rot hinterlegt (`rgba(220,38,38,.10)`), rote Border, `#fc8181` Text, Orbitron/Uppercase. Platziert in `index.html` unter Hero-CTAs und unter CTA-Block-Buttons. Zeigt „⚠ Anmeldeschluss: 5. September 2026" (Stand 2026-08-20 auf 05.09.2026 gesetzt — konsistent mit `CONFIG.ANMELDEFRIST` im Anmeldeportal `Racing-Event-Sing-In`. Historie: 31.08. → 31.07. → 15.08. → 05.09.2026).
 - **Navbar-Brand**: `Firmen Racing Cup 2026/2027` (nicht gekürzt) auf allen 4 Seiten — Corporate-Identity-Anforderung, analog zum Schwester-Repo `firmen-racing-cup-2026`. Bei ≤768px reduziert `.navbar-brand` auf `.6rem`/`.1em` Letter-Spacing, damit der volle Markenname auf schmalen Mobilgeräten nicht umbricht.
 - **CEO Quality Pass** (Commit `6692d03`): Neue Utility-Klassen in `css/style.css` —
   `.cta-row`, `.hero-page`, `.total-card`, `.total-table`, `.includes-card`, `.includes-grid`,
@@ -308,7 +308,7 @@ Rangliste:  https://endruofc.github.io/firmen-racing-cup-2026/standings.html
 - [x] **Kein Impressum** — bewusste Entscheidung: interne Firmenveranstaltung, kein öffentlicher Verkauf, kein redaktioneller Inhalt für Dritte; Schweizer nDSG greift bei rein internem Firmenkontext nicht
 - [x] Hybrid Racing: echtes Logo-Asset `logos/hybracing.png` integriert (Footer + Company-Card, Stand 2026-07-02) — ersetzt `.company-wordmark`-Platzhalter
 - [x] Preise eingetragen: CHF 90.— (normale Events) / CHF 180.— (Grand Finale)
-- [x] Season-Opener-Datum gesetzt: `2026-09-10T19:00:00` (Do. 10. September 2026)
+- [x] Season-Opener-Datum gesetzt: `2026-09-24T19:00:00` (Do. 24. September 2026)
 - [x] Alle Event-Termine in Timeline, Season-Grid und FAQ befüllt und konsistent
 - [x] `aria-expanded` in FAQ-Buttons dynamisch korrekt gesetzt
 - [x] README.md auf aktuellen Stand gebracht

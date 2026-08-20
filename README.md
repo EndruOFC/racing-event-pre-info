@@ -10,14 +10,14 @@ Hybracing Center GmbH, Nollenhornstrasse 7, CH-9434 Au SG
 
 | Event | Datum | Strecke | Kosten/Person |
 |-------|-------|---------|--------------|
-| Event 01 — Season Opener | Do. 10. September 2026 | Spielberg South Course | CHF 90.— |
+| Event 01 — Season Opener | Do. 24. September 2026 | Spielberg South Course | CHF 90.— |
 | Event 02 — Round 2 | Do. 15. Oktober 2026 | Hockenheim / Brands Hatch | CHF 90.— |
 | Event 03 — Weather Challenge | Do. 19. November 2026 | Nürburgring Sprint GT | CHF 90.— |
 | Grand Finale | Fr. 16. Januar 2027 | Nürburgring Nordschleife | CHF 180.— |
 
 Alle Events im **Hybracing Center**, Start jeweils ab 19:00 Uhr.
 
-**Anmeldeschluss: 31. Juli 2026** — Anmeldung über das Anmeldeportal (siehe „Verwandte Apps").
+**Anmeldeschluss: 5. September 2026** — Anmeldung über das Anmeldeportal (siehe „Verwandte Apps").
 
 ---
 
@@ -85,7 +85,7 @@ Alle Events im **Hybracing Center**, Start jeweils ab 19:00 Uhr.
 ## Stand der Implementierung (2026-07-02)
 
 - Alle 4 Seiten fertig; Eventdaten & Preise definitiv.
-- **Anmeldeschluss: 31. Juli 2026**; Countdown zielt auf den Season Opener (Do. 10. September 2026, 19:00 Uhr).
+- **Anmeldeschluss: 5. September 2026**; Countdown zielt auf den Season Opener (Do. 24. September 2026, 19:00 Uhr).
 - Cross-Site-Links mit `target="_blank" rel="noopener"`; Below-the-fold-Bilder `loading="lazy"`; Google Fonts mit `preconnect` + `display=swap`; **vollständige OG-Tags inkl. `og:image`** (+ width/height) auf `index.html`; **Favicon „R"-SVG einheitlich auf allen 4 Seiten**.
 - Einheitlicher Footer (Sponsor-Logos + 5 Zonen: presented / powered / links / credits / copy); Hybrid-Racing-Logo (`logos/hybracing.png`) im Footer aller Seiten und in der 3. Company-Card (verlinkt auf hybracing.ch).
 - Typo & Buttons finalisiert: grössere Section-Überschriften (`.section-heading` bis ~34px) und Outline-Buttons mit weissem Ruhezustand (Gelb erst beim Hover).
